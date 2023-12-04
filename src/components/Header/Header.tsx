@@ -1,10 +1,12 @@
 /** @jsxImportSource @emotion/react */
-import { Box, useMediaQuery, useTheme } from '@mui/material'
+import { Box, Link, useMediaQuery, useTheme } from '@mui/material'
 import { Trans } from '@lingui/macro'
 import { header, router, UnSupport } from './sytle'
 import { align } from '../../globalStyle'
 import { ReactComponent as BounceDarkLogo } from '../../assets/imgs/bounce/logo-white.svg'
 import { ReactComponent as BounceLogo } from '../../assets/imgs/bounce/logo.svg'
+import { ReactComponent as KravLogo } from '../../assets/imgs/tokens/karv_icon.svg'
+import { ReactComponent as KravDarkLogo } from '../../assets/imgs/tokens/karv_icon_dark.svg'
 import { css } from '@emotion/react'
 import { ConnectWalletDialog } from '../../components/Dialog/ConnectWallet'
 import { useCallback, useEffect, useMemo, useState } from 'react'
@@ -118,22 +120,37 @@ export const Header = () => {
         ]}
       >
         <div css={align}>
-          <div
-            css={[
-              align,
-              css`
-                margin-right: ${isMobile ? '0' : '73px'};
-              `,
-            ]}
-          >
-            <NavLink style={{ height: '22px' }} to={'/trade'}>
-              {theme.palette.mode === 'dark' ? (
-                <BounceDarkLogo height="29" width="139" />
-              ) : (
-                <BounceLogo height="29" width="139" />
-              )}
-            </NavLink>
+          <div>
+            <div
+              css={[
+                align,
+                css`
+                  margin-right: ${isMobile ? '0' : '73px'};
+                `,
+              ]}
+            >
+              <NavLink style={{ height: '29px' }} to={'/trade'}>
+                {theme.palette.mode === 'dark' ? (
+                  <BounceDarkLogo height="29" width="139" />
+                ) : (
+                  <BounceLogo height="29" width="139" />
+                )}
+              </NavLink>
+            </div>
+            <div>
+              <Link underline="none" href="https://app.krav.trade" target="_blank">
+                <Box sx={{ display: 'flex', alignItems: 'center', fontSize: 12, color: theme.text.primary }}>
+                  Powered by KRAV &nbsp;
+                  {theme.palette.mode === 'dark' ? (
+                    <KravDarkLogo height="14" width="14" />
+                  ) : (
+                    <KravLogo height="14" width="14" />
+                  )}
+                </Box>
+              </Link>
+            </div>
           </div>
+
           {!isMobile && (
             <Box
               sx={{
