@@ -62,7 +62,7 @@ export const NewStake = () => {
             padding-bottom: 40px;
           `}
         >
-          Engage the lock-in feature to secure your Bounce earnings and obtain veKRAV privileges. Enhance your yield
+          Engage the lock-in feature to secure your Bounce Quanto earnings and obtain veKRAV privileges. Enhance your yield
           potential by up to 2.5x
         </p>
       </div>

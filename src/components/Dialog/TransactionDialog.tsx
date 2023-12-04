@@ -54,7 +54,7 @@ export const TransactionDialog = () => {
                   padding: 0;
                 `}
               >
-                Bounce requests wallet approval
+                Bounce Quanto requests wallet approval
               </span>
               <CloseSharpIcon sx={{ cursor: 'pointer' }} onClick={() => setTransactionDialogVisibility(false)} />
             </div>
@@ -69,7 +69,7 @@ export const TransactionDialog = () => {
                   font-size: 14px;
                 `}
               >
-                Please manually interact with your wallet. Please enable Bounce to access your tokens.
+                Please manually interact with your wallet. Please enable Bounce Quanto to access your tokens.
               </p>
               {theme.palette.mode === 'dark' ? (
                 <ApproveDarkIcon className="flash" />
@@ -104,7 +104,7 @@ export const TransactionDialog = () => {
                   padding: 0;
                 `}
               >
-                Bounce requests wallet interaction
+                Bounce Quanto requests wallet interaction
               </span>
               <CloseSharpIcon sx={{ cursor: 'pointer' }} onClick={() => setTransactionDialogVisibility(false)} />
             </div>
@@ -149,7 +149,7 @@ export const TransactionDialog = () => {
                 font-size: ${isMobile ? '18px' : '20px'};
               `}
             >
-              <span>Bounce waiting for transaction settlement</span>
+              <span>Bounce Quanto waiting for transaction settlement</span>
               <CloseSharpIcon sx={{ cursor: 'pointer' }} onClick={() => setTransactionDialogVisibility(false)} />
             </div>
             <div
@@ -164,7 +164,7 @@ export const TransactionDialog = () => {
                   padding: 0 12px;
                 `}
               >
-                Bounce is engaging with blockchain transaction, please wait patiently for on-chain transaction
+                Bounce Quanto is engaging with blockchain transaction, please wait patiently for on-chain transaction
                 settlement.
               </p>
               {theme.palette.mode === 'dark' ? (

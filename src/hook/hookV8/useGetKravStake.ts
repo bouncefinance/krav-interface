@@ -123,7 +123,7 @@ export const useGetKravStake = () => {
         updateSuccessDialog(TransactionAction.CLAIM_KRAV_REWARD)
         setSuccessSnackbarInfo({
           snackbarVisibility: true,
-          title: 'Claim Bounce reward',
+          title: 'Claim Bounce Quanto reward',
           content: 'Claim successfully',
         })
       } catch (e) {
