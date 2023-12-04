@@ -191,7 +191,7 @@ export const Dashboard = () => {
                 `}
                 className="tabs"
               >
-                Krav Staking
+                Bounce Staking
               </p>
               <p>
                 {getBigNumberStr(new BigNumber(0), 2)}
