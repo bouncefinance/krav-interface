@@ -4,7 +4,6 @@ import { dialogContent } from './sytle'
 import CloseSharpIcon from '@mui/icons-material/CloseSharp'
 import { useRootStore } from '../../store/root'
 import { css } from '@emotion/react'
-import { NavLink } from 'react-router-dom'
 import { SelectTokenItem } from './SelectTokenItem'
 import { DialogLayout } from './DialogLayout'
 
@@ -47,24 +46,6 @@ export const SelectToken = ({ isOpen, setIsOpen }: SelectTokenProps) => {
             allPoolParams.map((pool) => {
               return <SelectTokenItem pool={pool} setIsOpen={setIsOpen} key={pool.tradingT} />
             })}
-        </div>
-
-        <div
-          css={css`
-            padding: 24px 64px;
-            text-align: center;
-          `}
-        >
-          <span>Can not find the target asset you want to trade? Come &nbsp;</span>
-          <NavLink
-            to={'/liquidity'}
-            css={css`
-              color: ${theme.palette.mode === 'dark' ? theme.text.primary : ''};
-            `}
-          >
-            <span>create </span>
-          </NavLink>
-          <span>one!</span>
         </div>
       </div>
     </DialogLayout>
