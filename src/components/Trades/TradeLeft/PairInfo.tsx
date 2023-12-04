@@ -234,8 +234,6 @@ export const PairInfo = ({ setIsOpenSelectToken, setTradeModel, tradeModel }: Pa
                     </Menu>
                   </>
                 )}
-
-                <span>Market</span>
                 {/*<KeyboardArrowDownIcon sx={{ height: '12px', width: '12px', marginLeft: '8px' }} />*/}
               </div>
               <div
@@ -245,7 +243,7 @@ export const PairInfo = ({ setIsOpenSelectToken, setTradeModel, tradeModel }: Pa
                     cursor: pointer;
                     display: flex;
                     align-items: center;
-                    margin-left: ${isMobile ? '8px' : '34px'};
+                    margin-left: ${isMobile ? '8px' : '0'};
                   `,
                 ]}
               >
