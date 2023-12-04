@@ -251,7 +251,6 @@ export const useFactory = () => {
             item.logoSource = require('../../assets/imgs/tokens/default_token.svg').default
           }
         })
-        console.log('forMatter', forMatter)
         forMatter = forMatter.filter((pool) => pool.tradingT === TARGET_POOL_TRADING)
         setAllPoolParams(forMatter)
         if (isLoadingFactory) {
