@@ -15,7 +15,7 @@ import BigNumber from 'bignumber.js'
 import { Interface } from 'ethers/lib/utils'
 import krav_factory from '../../abi/krav_factory.json'
 
-const TARGET_POOL_TRADING = '0xe4673E9eEa50390e6B08C62e0730cE1B88E12781'
+const TARGET_POOL_TRADING = '0x035D8BdcA71412486cef8DEcD386677c98eEC261'
 
 enum Task {
   tokenTask = 0,
