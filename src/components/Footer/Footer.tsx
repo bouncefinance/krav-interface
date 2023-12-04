@@ -81,7 +81,11 @@ export const Footer = () => {
             </div>
             <div css={[doc, hover]}>
               <p>Developers</p>
-              <Link underline="none" sx={{ color: theme.text.primary }} href="https://docs.krav.trade/">
+              <Link
+                underline="none"
+                sx={{ color: theme.text.primary }}
+                href="https://docs.bounce.finance/welcome-to-bounce-docs/welcome"
+              >
                 <p>Documentation</p>
               </Link>
 
@@ -90,10 +94,10 @@ export const Footer = () => {
             </div>
             <div css={[doc, hover]}>
               <p>Support</p>
-              <Link underline="none" sx={{ color: theme.text.primary }} href="https://t.me/kravtrade">
+              <Link underline="none" sx={{ color: theme.text.primary }} href="https://t.me/bounce_finance">
                 <p>Telegram</p>
               </Link>
-              <Link underline="none" sx={{ color: theme.text.primary }} href="https://twitter.com/kravtrade">
+              <Link underline="none" sx={{ color: theme.text.primary }} href="https://twitter.com/bounce_finance?s=21">
                 <p>Twitter</p>
               </Link>
               {/*<p>Discord</p>*/}
@@ -158,7 +162,11 @@ export const Footer = () => {
             </p>
             {showDev && (
               <>
-                <Link underline="none" sx={{ color: theme.text.primary }} href="https://docs.krav.trade/">
+                <Link
+                  underline="none"
+                  sx={{ color: theme.text.primary }}
+                  href="https://docs.bounce.finance/welcome-to-bounce-docs/welcome"
+                >
                   <p className="link">Documentation</p>
                 </Link>
               </>
@@ -178,10 +186,14 @@ export const Footer = () => {
             </p>
             {showSup && (
               <>
-                <Link underline="none" sx={{ color: theme.text.primary }} href="https://t.me/kravtrade">
+                <Link underline="none" sx={{ color: theme.text.primary }} href="https://t.me/bounce_finance">
                   <p>Telegram</p>
                 </Link>
-                <Link underline="none" sx={{ color: theme.text.primary }} href="https://twitter.com/kravtrade">
+                <Link
+                  underline="none"
+                  sx={{ color: theme.text.primary }}
+                  href="https://twitter.com/bounce_finance?s=21"
+                >
                   <p>Twitter</p>
                 </Link>
               </>
