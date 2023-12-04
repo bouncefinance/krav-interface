@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react'
 import { align } from '../../globalStyle'
-import { ReactComponent as KarvIcon } from '../../assets/imgs/tokens/KRAV.svg'
+import { ReactComponent as BounceIcon } from '../../assets/imgs/bounce/bounce_logo.svg'
 import { Link, Tooltip, useTheme } from '@mui/material'
 import { ReactComponent as CopyDarkIcon } from '../../assets/imgs/darkModel/copy_icon_dark.svg'
 import { ReactComponent as CopyIcon } from '../../assets/imgs/copy_icon.svg'
@@ -57,11 +57,13 @@ export const SettingMenuContent = ({
       >
         <div>
           <div css={align}>
-            <KarvIcon
+            <BounceIcon
               css={css`
                 border-radius: 50%;
                 background: white;
                 margin-right: 11px;
+                height: 40px;
+                width: 40px;
               `}
             />
             {account.substr(0, 4)}
