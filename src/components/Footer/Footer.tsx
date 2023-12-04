@@ -74,9 +74,9 @@ export const Footer = () => {
               <NavLink to={'/liquidity'}>
                 <p>Earn</p>
               </NavLink>
-              <NavLink to={'/portfolio/referral'}>
-                <p>Referrals</p>
-              </NavLink>
+              {/*<NavLink to={'/portfolio/referral'}>*/}
+              {/*  <p>Referrals</p>*/}
+              {/*</NavLink>*/}
               {/*<p>Buy</p>*/}
             </div>
             <div css={[doc, hover]}>
@@ -138,9 +138,9 @@ export const Footer = () => {
                 <NavLink to={'/liquidity'}>
                   <p className="link">Earn</p>
                 </NavLink>
-                <NavLink to={'/portfolio/referral'}>
-                  <p className="link">Referrals</p>
-                </NavLink>
+                {/*<NavLink to={'/portfolio/referral'}>*/}
+                {/*  <p className="link">Referrals</p>*/}
+                {/*</NavLink>*/}
               </div>
             )}
           </div>
