@@ -3,6 +3,8 @@ import { css } from '@emotion/react'
 import { ReactComponent as BounceDarkLogo } from '../../assets/imgs/bounce/logo-white.svg'
 import { ReactComponent as BounceLogo } from '../../assets/imgs/bounce/logo.svg'
 import { useMediaQuery, useTheme } from '@mui/material'
+import { ReactComponent as KravDarkLogo } from '../../assets/imgs/tokens/karv_icon_dark.svg'
+import { ReactComponent as KravLogo } from '../../assets/imgs/tokens/karv_icon.svg'
 // import { ReactComponent as Twitter } from '../../assets/imgs/twitter.svg'
 // import { ReactComponent as Medium } from '../../assets/imgs/medium.svg'
 // import TelegramIcon from '@mui/icons-material/Telegram'
@@ -83,10 +85,17 @@ export const Copyright = () => {
         <div
           css={css`
             color: ${theme.text.primary};
+            display: flex;
+            align-items: center;
             padding-bottom: ${isMobile ? '24px' : '0'};
           `}
         >
-          Powered by Krav
+          <span>Powered by KRAV &nbsp;</span>
+          {theme.palette.mode === 'dark' ? (
+            <KravDarkLogo height="14" width="14" />
+          ) : (
+            <KravLogo height="14" width="14" />
+          )}
         </div>
       </div>
     </div>
