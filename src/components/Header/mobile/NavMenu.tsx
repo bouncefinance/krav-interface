@@ -1,7 +1,7 @@
 /** @jsxImportSource @emotion/react */
 import { SwipeableDrawer, useTheme } from '@mui/material'
-import { ReactComponent as KravDarkLogo } from '../../../assets/imgs/darkModel/krav_logo_dark.svg'
-import { ReactComponent as KravLogo } from '../../../assets/imgs/krav_logo.svg'
+import { ReactComponent as BounceDarkLogo } from '../../../assets/imgs/bounce/logo-white.svg'
+import { ReactComponent as BounceLogo } from '../../../assets/imgs/bounce/logo.svg'
 import { NavLink } from 'react-router-dom'
 import CloseSharpIcon from '@mui/icons-material/CloseSharp'
 import { css } from '@emotion/react'
@@ -46,9 +46,9 @@ export const NavMenu = ({ isOpen, setIsOpen }: NavMenuProps) => {
       >
         <NavLink style={{ height: '22px' }} to={'/trade'}>
           {theme.palette.mode === 'dark' ? (
-            <KravDarkLogo height="22" width="91" />
+            <BounceDarkLogo height="22" width="91" />
           ) : (
-            <KravLogo height="22" width="91" />
+            <BounceLogo height="22" width="91" />
           )}
         </NavLink>
         <CloseSharpIcon sx={{ cursor: 'pointer' }} onClick={setIsOpen} />
@@ -67,12 +67,12 @@ export const NavMenu = ({ isOpen, setIsOpen }: NavMenuProps) => {
         <NavLink onClick={setIsOpen} to={'/liquidity'} css={[routerColor]}>
           <Trans>Liquidity</Trans>
         </NavLink>
-        <NavLink onClick={setIsOpen} to={'/portfolio'} css={[routerColor]}>
-          <Trans>Portfolio</Trans>
-        </NavLink>
-        <NavLink onClick={setIsOpen} to={'/statistics'} css={[routerColor]}>
-          <Trans>Statistics</Trans>
-        </NavLink>
+        {/*<NavLink onClick={setIsOpen} to={'/portfolio'} css={[routerColor]}>*/}
+        {/*  <Trans>Portfolio</Trans>*/}
+        {/*</NavLink>*/}
+        {/*<NavLink onClick={setIsOpen} to={'/statistics'} css={[routerColor]}>*/}
+        {/*  <Trans>Statistics</Trans>*/}
+        {/*</NavLink>*/}
       </div>
       <div
         className="action"

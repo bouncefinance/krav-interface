@@ -15,6 +15,8 @@ import BigNumber from 'bignumber.js'
 import { Interface } from 'ethers/lib/utils'
 import krav_factory from '../../abi/krav_factory.json'
 
+const TARGET_POOL_TRADING = '0xe4673E9eEa50390e6B08C62e0730cE1B88E12781'
+
 enum Task {
   tokenTask = 0,
   decimalsTask = 1,
@@ -249,7 +251,8 @@ export const useFactory = () => {
             item.logoSource = require('../../assets/imgs/tokens/default_token.svg').default
           }
         })
-        forMatter = forMatter.filter((pool) => pool.symbol !== 'MAG')
+        console.log('forMatter', forMatter)
+        forMatter = forMatter.filter((pool) => pool.tradingT === TARGET_POOL_TRADING)
         setAllPoolParams(forMatter)
         if (isLoadingFactory) {
           if (forMatter.length === 0) {

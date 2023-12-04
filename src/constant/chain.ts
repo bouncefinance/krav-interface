@@ -46,16 +46,16 @@ export const SUPPORT_CHAIN_TEST = [
 ]
 
 export const SUPPORT_CHAIN_PRODUCTION = [
-  ChainId.MAINNET,
-  ChainId.BASE,
+  // ChainId.MAINNET,
+  // ChainId.BASE,
   ChainId.BSC,
-  ChainId.POLYGON,
-  ChainId.ARB,
-  ChainId.OP,
-  ChainId.POLYGON_ZK_EVM,
+  // ChainId.POLYGON,
+  // ChainId.ARB,
+  // ChainId.OP,
+  // ChainId.POLYGON_ZK_EVM,
 ]
 
-export const DEFAULT_CHAIN = ChainId.BASE
+export const DEFAULT_CHAIN = ChainId.BSC
 
 export const API_CONFIG_TEST: { [chainId: number]: apiInfo } = {
   [ChainId.MAINNET]: {

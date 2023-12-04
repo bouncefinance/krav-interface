@@ -15,8 +15,8 @@ msgstr ""
 
 #: src/components/Header/Header.tsx
 #: src/components/Header/mobile/NavMenu.tsx
-msgid "Statistics"
-msgstr "Statistics"
+#~ msgid "Statistics"
+#~ msgstr "Statistics"
 
 #: src/components/Header/Header.tsx
 #: src/components/Header/mobile/NavMenu.tsx
@@ -50,8 +50,8 @@ msgstr "The assets you deposit will be part of the liquidity pool and receive fe
 
 #: src/components/Header/Header.tsx
 #: src/components/Header/mobile/NavMenu.tsx
-msgid "Portfolio"
-msgstr "Portfolio"
+#~ msgid "Portfolio"
+#~ msgstr "Portfolio"
 
 #: src/components/Header/Header.tsx
 #~ msgid "Base"

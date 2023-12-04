@@ -46,30 +46,30 @@ export const HomeLayout = ({ children }: { children: JSX.Element }) => {
           >
             Dashboard
           </div>
-          <div
-            css={[pathname === '/portfolio/stake' ? menuActive : '', mobileNav]}
-            onClick={() => {
-              navigate('/portfolio/stake')
-            }}
-          >
-            KRAV Staking
-          </div>
-          <div
-            css={[pathname === '/portfolio/farm' ? menuActive : '', mobileNav]}
-            onClick={() => {
-              navigate('/portfolio/farm')
-            }}
-          >
-            Farm
-          </div>
-          <div
-            css={[pathname === '/portfolio/referral' ? menuActive : '', mobileNav]}
-            onClick={() => {
-              navigate('/portfolio/referral')
-            }}
-          >
-            Referral
-          </div>
+          {/*<div*/}
+          {/*  css={[pathname === '/portfolio/stake' ? menuActive : '', mobileNav]}*/}
+          {/*  onClick={() => {*/}
+          {/*    navigate('/portfolio/stake')*/}
+          {/*  }}*/}
+          {/*>*/}
+          {/*  KRAV Staking*/}
+          {/*</div>*/}
+          {/*<div*/}
+          {/*  css={[pathname === '/portfolio/farm' ? menuActive : '', mobileNav]}*/}
+          {/*  onClick={() => {*/}
+          {/*    navigate('/portfolio/farm')*/}
+          {/*  }}*/}
+          {/*>*/}
+          {/*  Farm*/}
+          {/*</div>*/}
+          {/*<div*/}
+          {/*  css={[pathname === '/portfolio/referral' ? menuActive : '', mobileNav]}*/}
+          {/*  onClick={() => {*/}
+          {/*    navigate('/portfolio/referral')*/}
+          {/*  }}*/}
+          {/*>*/}
+          {/*  Referral*/}
+          {/*</div>*/}
         </div>
       )}
       <div className="home-content">{children}</div>

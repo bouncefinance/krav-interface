@@ -15,8 +15,8 @@ msgstr ""
 
 #: src/components/Header/Header.tsx
 #: src/components/Header/mobile/NavMenu.tsx
-msgid "Statistics"
-msgstr ""
+#~ msgid "Statistics"
+#~ msgstr ""
 
 #: src/components/Header/Header.tsx
 #: src/components/Header/mobile/NavMenu.tsx
@@ -50,8 +50,8 @@ msgstr ""
 
 #: src/components/Header/Header.tsx
 #: src/components/Header/mobile/NavMenu.tsx
-msgid "Portfolio"
-msgstr ""
+#~ msgid "Portfolio"
+#~ msgstr ""
 
 #: src/components/Header/Header.tsx
 #~ msgid "Base"

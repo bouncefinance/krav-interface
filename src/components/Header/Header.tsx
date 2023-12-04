@@ -3,8 +3,8 @@ import { Box, useMediaQuery, useTheme } from '@mui/material'
 import { Trans } from '@lingui/macro'
 import { header, router, UnSupport } from './sytle'
 import { align } from '../../globalStyle'
-import { ReactComponent as KravDarkLogo } from '../../assets/imgs/darkModel/krav_logo_dark.svg'
-import { ReactComponent as KravLogo } from '../../assets/imgs/krav_logo.svg'
+import { ReactComponent as BounceDarkLogo } from '../../assets/imgs/bounce/logo-white.svg'
+import { ReactComponent as BounceLogo } from '../../assets/imgs/bounce/logo.svg'
 import { css } from '@emotion/react'
 import { ConnectWalletDialog } from '../../components/Dialog/ConnectWallet'
 import { useCallback, useEffect, useMemo, useState } from 'react'
@@ -128,9 +128,9 @@ export const Header = () => {
           >
             <NavLink style={{ height: '22px' }} to={'/trade'}>
               {theme.palette.mode === 'dark' ? (
-                <KravDarkLogo height="22" width="91" />
+                <BounceDarkLogo height="29" width="139" />
               ) : (
-                <KravLogo height="22" width="91" />
+                <BounceLogo height="29" width="139" />
               )}
             </NavLink>
           </div>
@@ -155,12 +155,12 @@ export const Header = () => {
               <NavLink to={'/liquidity'} css={[router, routerColor, pathname === '/liquidity' ? routerActive : '']}>
                 <Trans>Liquidity</Trans>
               </NavLink>
-              <NavLink to={'/portfolio'} css={[router, routerColor, isHomePath ? routerActive : '']}>
-                <Trans>Portfolio</Trans>
-              </NavLink>
-              <NavLink to={'/statistics'} css={[router, routerColor, pathname === '/statistics' ? routerActive : '']}>
-                <Trans>Statistics</Trans>
-              </NavLink>
+              {/*<NavLink to={'/portfolio'} css={[router, routerColor, isHomePath ? routerActive : '']}>*/}
+              {/*  <Trans>Portfolio</Trans>*/}
+              {/*</NavLink>*/}
+              {/*<NavLink to={'/statistics'} css={[router, routerColor, pathname === '/statistics' ? routerActive : '']}>*/}
+              {/*  <Trans>Statistics</Trans>*/}
+              {/*</NavLink>*/}
             </Box>
           )}
         </div>

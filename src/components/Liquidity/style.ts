@@ -53,7 +53,7 @@ export const liquidity = css`
   .liquidity-card-layout {
     font-family: 'Inter';
     font-style: normal;
-    margin: 32px 40px 0;
+    margin: 60px 40px 0;
     padding-bottom: 64px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;

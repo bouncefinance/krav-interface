@@ -1,10 +1,10 @@
 /** @jsxImportSource @emotion/react */
 // import KARVSearchTextField from '../../components/KravUIKit/KarvSearchTextField'
-import KRAVButton from '../KravUIKit/KravButton'
+// import KRAVButton from '../KravUIKit/KravButton'
 import { TargetMarketProps } from './type'
 import { useRootStore } from '../../store/root'
 // import { MarketItem } from './MarketItem'
-import { useWeb3React } from '@web3-react/core'
+// import { useWeb3React } from '@web3-react/core'
 import { MarketSkeleton } from './MarketSkeleton'
 import { Stack, Typography, useTheme } from '@mui/material'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
@@ -18,7 +18,7 @@ export const TargetMarket = ({ setCreateLiquidityPool, setAddLiquidity, aprList,
   const theme = useTheme()
   const allPoolParams = useRootStore((store) => store.allPoolParams)
   const isLoadingFactory = useRootStore((store) => store.isLoadingFactory)
-  const { account } = useWeb3React()
+  // const { account } = useWeb3React()
   const [aprSortBy, setAprSortBy] = useState<'asc' | 'desc'>('asc')
   const [totalSortBy, setTotalSortBy] = useState<'asc' | 'desc'>('asc')
   const [aprAsc, setAprAsc] = useState<boolean>(false)
@@ -74,17 +74,17 @@ export const TargetMarket = ({ setCreateLiquidityPool, setAddLiquidity, aprList,
         <span>Target Market</span>
         <span>{tableData.length > 0 ? ` (${tableData.length})` : ''}</span>
       </div>
-      <div className="liquidity-search">
-        {/* <KARVSearchTextField placeholder="Search name or paste address" adornment={'start'} sx={{ height: '40px' }} /> */}
-        {account && (
-          <KRAVButton
-            sx={{ width: '132px', marginLeft: '20px', display: 'flex' }}
-            onClick={() => setCreateLiquidityPool(true)}
-          >
-            Create Liquidity
-          </KRAVButton>
-        )}
-      </div>
+      {/*<div className="liquidity-search">*/}
+      {/*  /!* <KARVSearchTextField placeholder="Search name or paste address" adornment={'start'} sx={{ height: '40px' }} /> *!/*/}
+      {/*  {account && (*/}
+      {/*    <KRAVButton*/}
+      {/*      sx={{ width: '132px', marginLeft: '20px', display: 'flex' }}*/}
+      {/*      onClick={() => setCreateLiquidityPool(true)}*/}
+      {/*    >*/}
+      {/*      Create Liquidity*/}
+      {/*    </KRAVButton>*/}
+      {/*  )}*/}
+      {/*</div>*/}
       {isTable && (
         <div>
           <div className="liquidity-table grey nowrap">
