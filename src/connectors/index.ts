@@ -4,6 +4,7 @@ import { MetaMask } from '@web3-react/metamask'
 import { Connection, ConnectionType } from './type'
 import { URLS } from './chain'
 import { Connector } from '@web3-react/types'
+import { walletConnectV2Connection } from './walletConnectV2'
 
 function onError(error: Error) {
   console.debug(`web3-react error: ${error}`)
@@ -40,12 +41,11 @@ const coinbaseWalletConnection: Connection = {
 }
 
 export function getConnections() {
-  return [
-    injectedConnection,
-    // walletConnectConnection,
-    coinbaseWalletConnection,
-  ]
+  return [injectedConnection, walletConnectV2Connection, coinbaseWalletConnection]
 }
+
+export const connections = [injectedConnection, walletConnectV2Connection]
+
 // @ts-ignore
 export function getConnection(c: Connector | ConnectionType) {
   if (c instanceof Connector) {
@@ -60,8 +60,8 @@ export function getConnection(c: Connector | ConnectionType) {
         return injectedConnection
       case ConnectionType.COINBASE_WALLET:
         return coinbaseWalletConnection
-      // case ConnectionType.WALLET_CONNECT:
-      //   return walletConnectConnection
+      case ConnectionType.WALLET_CONNECT_V2:
+        return walletConnectV2Connection
     }
   }
 }

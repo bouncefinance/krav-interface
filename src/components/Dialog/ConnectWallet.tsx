@@ -10,6 +10,9 @@ import { useUpdateError } from '../../hook/hookV8/useUpdateError'
 import { TransactionAction } from '../../store/TransactionSlice'
 import { DEFAULT_CHAIN } from '../../constant/chain'
 import { css } from '@emotion/react'
+import { ReactComponent as WalletConnectIcon } from '../../assets/imgs/wallet/walletconnect-icon.svg'
+import { ConnectionType } from '../../connectors/type'
+import { getConnection } from '../../connectors'
 
 export type ConnectWalletDialogProp = {
   walletDialogVisibility: boolean
@@ -22,15 +25,29 @@ export const ConnectWalletDialog = ({ walletDialogVisibility, setWalletDialogVis
   const updateError = useUpdateError()
 
   const activeConnection = useCallback(
-    async (walletName?: string) => {
+    async (walletName: string) => {
+      const connection = getConnection(
+        walletName === 'metamask' ? ConnectionType.INJECTED : ConnectionType.WALLET_CONNECT_V2
+      )!
       try {
-        try {
-          await connector.activate()
-        } catch (e: any) {
-          if (e.code === 4001) return
+        if (walletName === 'metamask') {
           try {
-            await connector.activate(getAddChainParameters(DEFAULT_CHAIN))
+            await connection.connector.activate()
+          } catch (e: any) {
+            if (e.code === 4001) return
+            try {
+              await connection.connector.activate(getAddChainParameters(DEFAULT_CHAIN))
+            } catch (e) {
+              updateError(TransactionAction.WALLET)
+            }
+          }
+        }
+        if (walletName === 'connectWallet') {
+          try {
+            connector.resetState()
+            await connection.connector.activate(DEFAULT_CHAIN, setWalletDialogVisibility(false))
           } catch (e) {
+            console.log('e', e)
             updateError(TransactionAction.WALLET)
           }
         }
@@ -67,19 +84,21 @@ export const ConnectWalletDialog = ({ walletDialogVisibility, setWalletDialogVis
               onClick={async () => {
                 await activeConnection('metamask')
                 setWalletDialogVisibility(false)
-                // await initUserToken()
-                // setInterval(async () => {
-                //   await Promise.all([
-                //     getBalance(),
-                //     getUserOpenTrade(tradePool.storageT, true),
-                //     getUserOpenLimitOrders(tradePool.storageT, true),
-                //     getUserPositionData(),
-                //   ])
-                // }, 90000)
               }}
             >
               <img src={MetamaskIcon} height="25" width="25" alt="" />
               <span>MetaMask</span>
+            </div>
+            <div
+              css={css`
+                border: ${theme.splitLine.primary};
+              `}
+              onClick={async () => {
+                await activeConnection('connectWallet')
+              }}
+            >
+              <WalletConnectIcon height="25" width="25" />
+              <span>Wallet Connect</span>
             </div>
           </div>
         </div>
