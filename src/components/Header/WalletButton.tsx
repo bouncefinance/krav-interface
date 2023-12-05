@@ -69,7 +69,10 @@ export const WalletButton = ({
 
   const disconnect = useCallback(async () => {
     if (connector) {
-      await connector.resetState()
+      if (connector && connector.deactivate) {
+        connector.deactivate()
+      }
+      connector.resetState()
       setDisconnectWallet(true)
     }
   }, [connector])
