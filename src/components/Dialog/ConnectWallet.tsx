@@ -21,7 +21,7 @@ export type ConnectWalletDialogProp = {
 
 export const ConnectWalletDialog = ({ walletDialogVisibility, setWalletDialogVisibility }: ConnectWalletDialogProp) => {
   const theme = useTheme()
-  const { account, connector } = useWeb3React()
+  const { account } = useWeb3React()
   const updateError = useUpdateError()
 
   const activeConnection = useCallback(
@@ -44,8 +44,8 @@ export const ConnectWalletDialog = ({ walletDialogVisibility, setWalletDialogVis
         }
         if (walletName === 'connectWallet') {
           try {
-            connector.resetState()
-            await connection.connector.activate(DEFAULT_CHAIN, setWalletDialogVisibility(false))
+            setWalletDialogVisibility(false)
+            await connection.connector.activate(DEFAULT_CHAIN)
           } catch (e) {
             console.log('e', e)
             updateError(TransactionAction.WALLET)

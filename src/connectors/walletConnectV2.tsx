@@ -37,10 +37,8 @@ export class WalletConnectV2 extends WalletConnect {
     })
   }
 
-  activate(chainId?: number, setEvent?: () => void) {
-    return super.activate(chainId).then(() => {
-      if (setEvent) setEvent()
-    })
+  activate(chainId?: number) {
+    return super.activate(chainId).then()
   }
 }
 
