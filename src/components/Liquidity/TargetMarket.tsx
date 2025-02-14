@@ -89,7 +89,7 @@ export const TargetMarket = ({ setCreateLiquidityPool, setAddLiquidity, aprList,
       {/*</div>*/}
       {isTable && (
         <div>
-          <div className="liquidity-table grey nowrap">
+          <div className="liquidity-table grey nowrap" style={{ paddingTop: '24px' }}>
             <div style={{ color: '#757575' }}>ASSET</div>
             <Stack direction={'row'} alignItems={'center'}>
               <Typography fontFamily={'Inter'} fontSize={14} sx={{ marginRight: '4px', color: '#757575' }}>
