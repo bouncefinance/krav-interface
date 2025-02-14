@@ -133,6 +133,11 @@ export const AddLiquidity = ({ isOpen, setIsOpen }: AddLiquidityProps) => {
                   height: '28px',
                   fontSize: '20px',
                   minHeight: '28px',
+                  '> div': {
+                    '> input': {
+                      color: '#ffffff!important',
+                    },
+                  },
                   '& .MuiOutlinedInput-root': {
                     height: '28px',
                     minHeight: '28px',

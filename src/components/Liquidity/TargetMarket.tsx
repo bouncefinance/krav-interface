@@ -59,6 +59,7 @@ export const TargetMarket = ({ setCreateLiquidityPool, setAddLiquidity, aprList,
       className="liquidity-content"
       css={css`
         background: #00000080;
+        backdrop-filter: blur(4px);
         color: ${theme.text.primary};
       `}
     >
@@ -89,9 +90,9 @@ export const TargetMarket = ({ setCreateLiquidityPool, setAddLiquidity, aprList,
       {isTable && (
         <div>
           <div className="liquidity-table grey nowrap">
-            <div>ASSET</div>
+            <div style={{ color: '#757575' }}>ASSET</div>
             <Stack direction={'row'} alignItems={'center'}>
-              <Typography fontFamily={'Inter'} fontSize={14} sx={{ marginRight: '4px' }}>
+              <Typography fontFamily={'Inter'} fontSize={14} sx={{ marginRight: '4px', color: '#757575' }}>
                 APR
               </Typography>
               <Stack
@@ -148,9 +149,9 @@ export const TargetMarket = ({ setCreateLiquidityPool, setAddLiquidity, aprList,
                 />
               </Stack>
             </Stack>
-            <div>UTILIZATION</div>
+            <div style={{ color: '#757575' }}>UTILIZATION</div>
             <Stack direction={'row'} alignItems={'center'}>
-              <Typography fontFamily={'Inter'} fontSize={14} sx={{ marginRight: '4px' }}>
+              <Typography fontFamily={'Inter'} fontSize={14} sx={{ marginRight: '4px', color: '#757575' }}>
                 TOTAL LIQUIDITY SUPPLY
               </Typography>
               <Stack
@@ -207,8 +208,8 @@ export const TargetMarket = ({ setCreateLiquidityPool, setAddLiquidity, aprList,
                 />
               </Stack>
             </Stack>
-            <div>YOUR LIQUIDITY SUPPLY</div>
-            <div>LP REWARD</div>
+            <div style={{ color: '#757575' }}>YOUR LIQUIDITY SUPPLY</div>
+            <div style={{ color: '#757575' }}>LP REWARD</div>
           </div>
           {isLoadingFactory &&
             [...Array(3).keys()].map((i) => {

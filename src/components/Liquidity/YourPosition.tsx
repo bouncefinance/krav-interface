@@ -58,13 +58,13 @@ export const YourPosition = ({
               margin-top: 24px;
             `}
           >
-            <div>ASSET</div>
+            <div style={{ color: '#757575' }}>ASSET</div>
             {/*<div>PER TICKET PRICE</div>*/}
-            <div>APR</div>
-            <div>UTILIZATION</div>
-            <div>YOUR LIQUIDITY SUPPLY</div>
-            <div>REMOVE LIMIT</div>
-            <div>WITHDRAW_BLOCK</div>
+            <div style={{ color: '#757575' }}>APR</div>
+            <div style={{ color: '#757575' }}>UTILIZATION</div>
+            <div style={{ color: '#757575' }}>YOUR LIQUIDITY SUPPLY</div>
+            <div style={{ color: '#757575' }}>REMOVE LIMIT</div>
+            <div style={{ color: '#757575' }}>WITHDRAW_BLOCK</div>
           </div>
           {!account && <div className="no-data">Connect to a wallet to view your positions.</div>}
           {account && isLoadingUserPosition && positionDatas.length === 0 && <MarketSkeleton />}

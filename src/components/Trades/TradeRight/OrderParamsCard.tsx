@@ -91,7 +91,7 @@ export const OrderParamsCard = ({
     userOpenTradeList,
     tradeModel,
     userPositionDatas,
-    setIsOpenSelectToken,
+    // setIsOpenSelectToken,
     tradePairIndex,
   } = useRootStore((state) => ({
     BTCPrice: state.BTCPrice,
@@ -104,7 +104,7 @@ export const OrderParamsCard = ({
     userOpenTradeList: state.userOpenTradeList,
     tradeModel: state.tradeModel,
     userPositionDatas: state.userPositionDatas,
-    setIsOpenSelectToken: state.setIsOpenSelectToken,
+    // setIsOpenSelectToken: state.setIsOpenSelectToken,
     tradePairIndex: state.tradePairIndex,
   }))
 
@@ -446,7 +446,7 @@ export const OrderParamsCard = ({
                       MAX
                     </div>
                     <div
-                      onClick={() => setIsOpenSelectToken(true)}
+                      // onClick={() => setIsOpenSelectToken(true)}
                       css={[
                         align,
                         css`

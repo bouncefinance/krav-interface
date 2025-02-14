@@ -11,7 +11,7 @@ import { useGetMarketStats } from '../../../hook/hookV8/useGetMarketStats'
 import { formatNumber } from '../../../utils'
 // import { BASE_KRAV_TRADING_ADDRESS } from '../../../constant/chain'
 import { TradeMode } from '../../../store/TradeSlice'
-import { EXCHANGE_TRADING_T } from '../../../constant/exchange'
+// import { EXCHANGE_TRADING_T } from '../../../constant/exchange'
 import { SelectPair } from '../../Dialog/SelectPair'
 import KeyboardArrowUpIcon from '@mui/icons-material/KeyboardArrowUp'
 import { BASE_KRAV_TRADING_ADDRESS } from '../../../constant/chain'
@@ -56,7 +56,8 @@ export const PairInfo = ({ setIsOpenSelectToken, setTradeModel, tradeModel }: Pa
   )
 
   const showSwitch = useMemo(() => {
-    return EXCHANGE_TRADING_T.includes(tradePool.tradingT) || Object.keys(pairConfig).length > 0
+    // return EXCHANGE_TRADING_T.includes(tradePool.tradingT) || Object.keys(pairConfig).length > 0
+    return false
   }, [tradePool])
 
   const tradePair = useMemo(() => {

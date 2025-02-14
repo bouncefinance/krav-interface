@@ -50,17 +50,17 @@ export const PositionItem = ({ position, setAddLiquidity, setRemoveLiquidity, ap
             margin-left: 8px;
           `}
         >
-          <p>{position.pool.symbol}</p>
+          <p style={{ color: '#fff' }}>{position.pool.symbol}</p>
           <p className="small grey">{position.pool.symbol}</p>
         </div>
       </div>
       {/*<div>*/}
       {/*  1 BTC={position.pool.proportionBTC} {position.pool.symbol}*/}
       {/*</div>*/}
-      <div>{apr.toFixed(2)}%</div>
-      <div>{position.pool.utilization.toFixed(2)}%</div>
+      <div style={{ color: '#fff' }}>{apr.toFixed(2)}%</div>
+      <div style={{ color: '#fff' }}>{position.pool.utilization.toFixed(2)}%</div>
       <div>
-        <p>
+        <p style={{ color: '#fff' }}>
           {eXDecimals(position.daiDeposited, position.pool.decimals).toFixed(2)} {position.pool.symbol}
         </p>
         {/*<p className="small grey">*/}
@@ -74,7 +74,7 @@ export const PositionItem = ({ position, setAddLiquidity, setRemoveLiquidity, ap
                 there must be a minimum of 43,200 blocks in between two consecutive withdrawals. These rules help ensure
                 a stable and fair trading environment on our platform.`}
         >
-          <span css={align}>
+          <span css={align} style={{ color: '#fff' }}>
             {lockAmount.isGreaterThan(0)
               ? eXDecimals(new BigNumber(maxWithdrawAmount), position.pool.decimals).toFixed(2)
               : eXDecimals(position.daiDeposited, position.pool.decimals).toFixed(2)}
@@ -86,7 +86,7 @@ export const PositionItem = ({ position, setAddLiquidity, setRemoveLiquidity, ap
 
       <div>
         <Tooltip title={`Current block: ${position.pool.blockNumber}`}>
-          <span>
+          <span style={{ color: '#fff' }}>
             {position.withdrawBlock.plus(WITHDRAW_BLOCK_DIFF).isGreaterThan(position.pool.blockNumber)
               ? position.withdrawBlock.plus(WITHDRAW_BLOCK_DIFF).minus(position.pool.blockNumber).toFixed(0)
               : '0'}
@@ -109,10 +109,11 @@ export const PositionItem = ({ position, setAddLiquidity, setRemoveLiquidity, ap
             height: '32px',
             width: '32px',
             minWidth: '32px',
-            border: theme.palette.mode === 'dark' ? '1px solid #dedede' : '1px solid #2E2E2E',
+            borderRadius: '50%',
+            border: theme.palette.mode === 'dark' ? '1px solid #dedede' : '1px solid #fff',
             margin: '12px',
             '> svg > path': {
-              fill: theme.palette.mode === 'dark' ? '#dedede' : '',
+              fill: theme.palette.mode === 'dark' ? '#dedede' : '#fff',
             },
           }}
         >
@@ -128,9 +129,10 @@ export const PositionItem = ({ position, setAddLiquidity, setRemoveLiquidity, ap
             height: '32px',
             width: '32px',
             minWidth: '32px',
-            border: theme.palette.mode === 'dark' ? '1px solid #dedede' : '1px solid #2E2E2E',
+            borderRadius: '50%',
+            border: theme.palette.mode === 'dark' ? '1px solid #dedede' : '1px solid #fff',
             '> svg > path': {
-              fill: theme.palette.mode === 'dark' ? '#dedede' : '',
+              fill: theme.palette.mode === 'dark' ? '#dedede' : '#fff',
             },
             '&.Mui-disabled': {
               cursor: 'not-allowed',

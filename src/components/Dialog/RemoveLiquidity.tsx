@@ -150,6 +150,11 @@ export const RemoveLiquidity = ({ isOpen, setIsOpen }: RemoveLiquidityProps) => 
                   // color: theme.text.primary,
                   // background: '#292924',
                   // color: '#ffffff!important',
+                  '> div': {
+                    '> input': {
+                      color: '#ffffff!important',
+                    },
+                  },
                   height: '28px',
                   fontSize: '20px',
                   minHeight: '28px',
