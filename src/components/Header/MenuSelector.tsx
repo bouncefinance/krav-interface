@@ -86,6 +86,7 @@ export const MenuSelector = () => {
         sx={{
           '& .MuiPaper-root': {
             minWidth: 220,
+            height: '52px!important',
           },
         }}
         id="network-menu"
@@ -97,36 +98,36 @@ export const MenuSelector = () => {
         }}
       >
         {pathname === '/liquidity' && (
-          <MenuItem sx={{ width: '100%' }}>
-            <div
-              css={css`
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                width: 100%;
-              `}
-            >
-              <NavLink to={'/trade'} css={[router, routerColor, isTradePath ? routerActive : '', itemPadding]}>
+          <NavLink to={'/trade'} css={[router, routerColor, isTradePath ? routerActive : '', itemPadding]}>
+            <MenuItem sx={{ width: '100%' }}>
+              <div
+                css={css`
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  width: 100%;
+                `}
+              >
                 <Trans>Trade</Trans>
-              </NavLink>
-            </div>
-          </MenuItem>
+              </div>
+            </MenuItem>
+          </NavLink>
         )}
         {pathname === '/trade' && (
-          <MenuItem sx={{ width: '100%' }}>
-            <div
-              css={css`
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                width: 100%;
-              `}
-            >
-              <NavLink to={'/liquidity'} css={[router, routerColor, itemPadding]}>
+          <NavLink to={'/liquidity'} css={[router, routerColor, itemPadding]}>
+            <MenuItem sx={{ width: '100%' }}>
+              <div
+                css={css`
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  width: 100%;
+                `}
+              >
                 <Trans>Liquidity</Trans>
-              </NavLink>
-            </div>
-          </MenuItem>
+              </div>
+            </MenuItem>
+          </NavLink>
         )}
       </Menu>
     </>

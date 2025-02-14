@@ -181,6 +181,9 @@ export const snackbar = css`
 `
 
 export const errorDialog = css`
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
   padding: 24px 0;
   font-family: 'Inter';
   font-style: normal;
