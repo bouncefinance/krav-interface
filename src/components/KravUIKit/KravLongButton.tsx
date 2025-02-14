@@ -5,7 +5,7 @@ const KRAVLongButton = styled(Button)(({ theme }) => ({
   whiteSpace: 'nowrap',
   textTransform: 'none',
   width: '100%',
-  fontFamily: 'Inter',
+  fontFamily: 'Work Sans',
   color: '#fff',
   background: '#009B72',
   borderRadius: '100px',

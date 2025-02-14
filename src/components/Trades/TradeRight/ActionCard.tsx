@@ -108,6 +108,7 @@ export const ActionsCard = ({
                 borderRadius: '100px',
                 minHeight: '44px',
                 padding: 0,
+                fontFamily: 'Work Sans',
                 background: orderType === 0 ? '#E1F25C !important' : '',
               }}
               label="Long"
@@ -118,6 +119,7 @@ export const ActionsCard = ({
                 borderRadius: '100px',
                 minHeight: '44px',
                 padding: 0,
+                fontFamily: 'Work Sans',
                 background: orderType === 1 ? '#E1F25C !important' : '',
               }}
               label="Short"

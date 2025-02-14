@@ -439,6 +439,7 @@ export const OrderParamsCard = ({
                         padding: 2px 6px;
                         font-size: 12px;
                         cursor: pointer;
+                        font-family: 'Work Sans';
                       `}
                       onClick={handleMaxInput}
                     >

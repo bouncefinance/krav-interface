@@ -24,6 +24,7 @@ export const orderParamsTab = css`
   padding: 6px 16px;
   border-radius: 4px;
   font-size: 16px;
+  font-family: 'Work Sans';
   font-weight: 600;
   line-height: 1.4;
   cursor: pointer;

@@ -414,7 +414,7 @@ export const PairInfo = ({ setIsOpenSelectToken, setTradeModel, tradeModel }: Pa
           >
             <div
               css={css`
-                font-family: 'Inter';
+                font-family: 'Work Sans';
                 font-size: 12px;
                 display: flex;
                 align-items: center;
@@ -438,7 +438,7 @@ export const PairInfo = ({ setIsOpenSelectToken, setTradeModel, tradeModel }: Pa
             </div>
             <div
               css={css`
-                font-family: 'Inter';
+                font-family: 'Work Sans';
                 font-size: 12px;
                 font-style: normal;
                 display: flex;
