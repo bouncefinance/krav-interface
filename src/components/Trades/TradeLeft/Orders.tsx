@@ -56,15 +56,18 @@ export const Orders = () => {
               >
                 Limit
               </div>
-              <div>{getOrderContent(limit.buy, limit.minPrice, new BigNumber(limit.positionSize), limit.leverage)}</div>
-              <div>${limit.minPrice.toFixed(tradePair.fixDecimals)}</div>
-              <div>${BTCPrice.toFixed(tradePair.fixDecimals)}</div>
-              <div>{limit.leverage}</div>
-              <div>
+              <div style={{ color: '#fff' }}>
+                {getOrderContent(limit.buy, limit.minPrice, new BigNumber(limit.positionSize), limit.leverage)}
+              </div>
+              <div style={{ color: '#fff' }}>${limit.minPrice.toFixed(tradePair.fixDecimals)}</div>
+              <div style={{ color: '#fff' }}>${BTCPrice.toFixed(tradePair.fixDecimals)}</div>
+              <div style={{ color: '#fff' }}>{limit.leverage}</div>
+              <div style={{ color: '#fff' }}>
                 {new BigNumber(limit.positionSize).toFixed(2)} {tradePool.symbol}
               </div>
               <div
                 css={css`
+                  color: #fff;
                   cursor: pointer;
                   text-decoration: underline;
                 `}

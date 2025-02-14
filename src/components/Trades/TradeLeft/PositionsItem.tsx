@@ -59,12 +59,12 @@ export const PositionsItem = ({ openTrade, index, pool }: PositionsItemProps) =>
         <div
           className="position-layout"
           css={css`
-            background: ${(index + 1) % 2 !== 0 ? (theme.palette.mode === 'dark' ? '#0f1114' : '#f1f1f1') : ''};
+            background: ${(index + 1) % 2 !== 0 ? (theme.palette.mode === 'dark' ? '#0f1114' : '') : ''};
             border-radius: 24px;
           `}
         >
           <div>
-            <p>
+            <p style={{ color: '#fff' }}>
               {tradePair.symbol}&nbsp;
               <span>{openTrade.leverage}x</span>
               <span
@@ -95,23 +95,29 @@ export const PositionsItem = ({ openTrade, index, pool }: PositionsItemProps) =>
               )}
             </p>
           </div>
-          <div>
+          <div style={{ color: '#fff' }}>
             {new BigNumber(openTrade.initialPosToken).toFixed(2)} {pool ? pool.symbol : tradePool.symbol}
           </div>
-          <div>${new BigNumber(openTrade.openPrice).toFixed(tradePair.fixDecimals)}</div>
+          <div style={{ color: '#fff' }}>${new BigNumber(openTrade.openPrice).toFixed(tradePair.fixDecimals)}</div>
           <div
             css={css`
-              color: #000000;
+              color: #fff;
             `}
           >
             ${BTCPrice.toFixed(tradePair.fixDecimals)}
           </div>
-          <div style={{ cursor: 'pointer', textDecoration: 'underline' }} onClick={() => setIsOpen(true)}>
+          <div
+            style={{ cursor: 'pointer', textDecoration: 'underline', color: '#fff' }}
+            onClick={() => setIsOpen(true)}
+          >
             {openTrade.sl.toString() === '0'
               ? `$${liqPrice.toFixed(tradePair.fixDecimals)}`
               : `$${BigNumber(openTrade.sl).toFixed(tradePair.fixDecimals)}`}
           </div>
-          <div style={{ cursor: 'pointer', textDecoration: 'underline' }} onClick={() => setIsOpen(true)}>
+          <div
+            style={{ cursor: 'pointer', textDecoration: 'underline', color: '#fff' }}
+            onClick={() => setIsOpen(true)}
+          >
             ${BigNumber(openTrade.tp).toFixed(tradePair.fixDecimals)}
           </div>
           <div>
@@ -120,6 +126,7 @@ export const PositionsItem = ({ openTrade, index, pool }: PositionsItemProps) =>
                 <div
                   css={css`
                     border: 3px solid transparent;
+                    color: #fff;
                     border-bottom-color: ${theme.text.primary};
                   `}
                   className="loading"
@@ -128,7 +135,10 @@ export const PositionsItem = ({ openTrade, index, pool }: PositionsItemProps) =>
               </div>
             )}
             {!openTrade.beingMarketClosed && (
-              <CloseSharpIcon sx={{ cursor: 'pointer' }} onClick={() => closeTradeMarket(openTrade.index)} />
+              <CloseSharpIcon
+                sx={{ cursor: 'pointer', fill: '#fff' }}
+                onClick={() => closeTradeMarket(openTrade.index)}
+              />
             )}
           </div>
         </div>
@@ -136,7 +146,7 @@ export const PositionsItem = ({ openTrade, index, pool }: PositionsItemProps) =>
       {openTrade.isPendingOrder && openTrade.leverage > 0 && (
         <div className="position-layout">
           <div>
-            <p>{tradePair.symbol}</p>
+            <p style={{ color: '#fff' }}>{tradePair.symbol}</p>
             <p>
               <span>{openTrade.leverage}x</span>
               <span
@@ -162,27 +172,28 @@ export const PositionsItem = ({ openTrade, index, pool }: PositionsItemProps) =>
               <span>({positionTp.toFixed(2)} %)</span>
             </p>
           </div>
-          <div>
+          <div style={{ color: '#fff' }}>
             {new BigNumber(openTrade.initialPosToken).toFixed(2)} {tradePool.symbol}
           </div>
-          <div>${new BigNumber(openTrade.openPrice).toFixed(tradePair.fixDecimals)}</div>
+          <div style={{ color: '#fff' }}>${new BigNumber(openTrade.openPrice).toFixed(tradePair.fixDecimals)}</div>
           <div
             css={css`
-              color: #000000;
+              color: #fff;
             `}
           >
             ${BTCPrice.toFixed(tradePair.fixDecimals)}
           </div>
-          <div>
+          <div style={{ color: '#fff' }}>
             {openTrade.sl.toString() === '0'
               ? `$${liqPrice.toFixed(tradePair.fixDecimals)}`
               : `$${BigNumber(openTrade.sl).toFixed(tradePair.fixDecimals)}`}
           </div>
-          <div>${BigNumber(openTrade.tp).toFixed(2)}</div>
+          <div style={{ color: '#fff' }}>${BigNumber(openTrade.tp).toFixed(2)}</div>
           {openTrade?.isInPending && (
             <div>
               <div
                 css={css`
+                  color: #fff;
                   border: 3px solid transparent;
                   border-bottom-color: ${theme.text.primary};
                 `}
