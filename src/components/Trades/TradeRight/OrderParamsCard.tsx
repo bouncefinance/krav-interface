@@ -754,7 +754,7 @@ export const OrderParamsCard = ({
                   align,
                   css`
                     justify-content: space-between;
-                    color: #8e8e80;
+                    color: #e6e6ce;
                     font-family: 'Work Sans';
                     font-size: 12px;
                     font-style: normal;
@@ -764,11 +764,7 @@ export const OrderParamsCard = ({
                 ]}
               >
                 <span>Collateral In</span>
-                <span
-                  css={css`
-                    color: #e6e6ce;
-                  `}
-                >
+                <span>
                   {isNaN(positionSizeDai.toNumber()) ? '--' : getBigNumberStr(positionSizeDai, 6)} {tradePool?.symbol}
                 </span>
               </p>
@@ -777,7 +773,7 @@ export const OrderParamsCard = ({
                   align,
                   css`
                     justify-content: space-between;
-                    color: #8e8e80;
+                    color: #e6e6ce;
                     font-family: 'Work Sans';
                     font-size: 12px;
                     font-style: normal;
@@ -787,13 +783,7 @@ export const OrderParamsCard = ({
                 ]}
               >
                 <span>Leverage</span>
-                <span
-                  css={css`
-                    color: #e6e6ce;
-                  `}
-                >
-                  {leverage}
-                </span>
+                <span>{leverage}</span>
               </p>
               {/*{tradeModel === TradeMode.DEGEN && (*/}
               {/*  <div>*/}
