@@ -35,7 +35,7 @@ export const Positions = () => {
         <div className="no-data">
           <KRAVButton
             onClick={() => setWalletDialogVisibility(true)}
-            sx={{ width: '113px', mt: '32px', mb: '25px', zIndex: 3 }}
+            sx={{ width: 'auto', mt: '32px', mb: '25px', zIndex: 3, padding: '6px 8px' }}
           >
             Connect Wallet
           </KRAVButton>
