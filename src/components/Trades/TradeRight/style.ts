@@ -8,8 +8,8 @@ export const input = css`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  padding: 8px 12px;
-  gap: 8px;
+  padding: 12px;
+  gap: 12px;
   width: 310px;
   border-radius: 10px;
   margin-bottom: 8px;
@@ -21,20 +21,21 @@ export const input = css`
   }
 `
 export const orderParamsTab = css`
-  padding: 4px 12px;
+  padding: 6px 16px;
   border-radius: 4px;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
+  line-height: 1.4;
   cursor: pointer;
-  color: #757575;
+  color: rgba(230, 230, 206, 0.4);
   :hover {
-    color: #fff;
-    background: #978365;
+    color: #1c1c19;
+    background: #e1f25c;
   }
   @media screen and (max-width: 1200px) {
     :hover {
-      color: #fff;
-      background: #978365;
+      color: #1c1c19;
+      background: #e1f25c;
     }
   }
 `

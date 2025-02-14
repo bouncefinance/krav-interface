@@ -76,7 +76,8 @@ export const ActionsCard = ({
         css={[
           actionCard,
           css`
-            background: ${theme.background.primary};
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(2px);
           `,
         ]}
       >
@@ -90,10 +91,15 @@ export const ActionsCard = ({
             value={orderType}
             onChange={handleChange}
             sx={{
-              color: '#000000',
               minHeight: '44px',
+              '& .MuiTab-root': {
+                color: 'rgba(230, 230, 206, 0.40) !important',
+                fontSize: 16,
+                fontWeight: 600,
+                lineHeight: 1.4,
+              },
               '& .MuiTabs-indicator': { display: 'none' },
-              '& .Mui-selected': { color: '#fff !important' },
+              '& .Mui-selected': { color: '#1C1C19 !important' },
             }}
           >
             <Tab
@@ -102,7 +108,7 @@ export const ActionsCard = ({
                 borderRadius: '100px',
                 minHeight: '44px',
                 padding: 0,
-                background: orderType === 0 ? '#009B72 !important' : '',
+                background: orderType === 0 ? '#E1F25C !important' : '',
               }}
               label="Long"
             />
@@ -112,7 +118,7 @@ export const ActionsCard = ({
                 borderRadius: '100px',
                 minHeight: '44px',
                 padding: 0,
-                background: orderType === 1 ? '#DB4C40 !important' : '',
+                background: orderType === 1 ? '#E1F25C !important' : '',
               }}
               label="Short"
             />

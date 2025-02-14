@@ -23,7 +23,7 @@ import KravShortButton from '../../KravUIKit/KravShortButton'
 import { TradeMode } from '../../../store/TradeSlice'
 // import { ReactComponent as AlertIcon } from '../../../assets/imgs/alert.svg'
 import { useInterval } from '../../../hook/hookV8/useInterval'
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
+// import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown'
 
 type OrderParamsCardProps = {
   leverage: number
@@ -290,8 +290,9 @@ export const OrderParamsCard = ({
           <div
             css={css`
               display: flex;
+              gap: 4px;
               margin: 16px 0;
-              background: #edeadd;
+              background: #292924;
               padding: 4px;
               border-radius: 100px;
             `}
@@ -300,8 +301,8 @@ export const OrderParamsCard = ({
               css={[
                 orderParamsTab,
                 css`
-                  color: ${tabIndex === 0 ? 'white' : ''};
-                  background: ${tabIndex === 0 ? '#978365' : ''};
+                  color: ${tabIndex === 0 ? '#1C1C19' : ''};
+                  background: ${tabIndex === 0 ? '#E1F25C' : ''};
                   width: 50%;
                   text-align: center;
                   border-radius: 100px;
@@ -318,8 +319,8 @@ export const OrderParamsCard = ({
               css={[
                 orderParamsTab,
                 css`
-                  color: ${tabIndex === 1 ? 'white' : ''};
-                  background: ${tabIndex === 1 ? '#978365' : ''};
+                  color: ${tabIndex === 1 ? '#1C1C19' : ''};
+                  background: ${tabIndex === 1 ? '#E1F25C' : ''};
                   width: 50%;
                   text-align: center;
                   border-radius: 100px;
@@ -335,8 +336,13 @@ export const OrderParamsCard = ({
           </div>
           <div
             css={css`
-              margin-bottom: 8px;
-              color: ${theme.text.primary};
+              margin-bottom: 4px;
+              color: #e6e6ce;
+              font-family: 'Work Sans';
+              font-size: 12px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 130%;
             `}
           >
             <span>Available:</span> {getBigNumberStr(PoolWalletBalance, 6) || '0'} {tradePool?.symbol}
@@ -344,6 +350,12 @@ export const OrderParamsCard = ({
           <div
             css={css`
               margin-bottom: 12px;
+              color: #e6e6ce;
+              font-family: 'Work Sans';
+              font-size: 12px;
+              font-style: normal;
+              font-weight: 400;
+              line-height: 130%;
             `}
           >
             <span>Order limit:</span>{' '}
@@ -357,7 +369,7 @@ export const OrderParamsCard = ({
                 css={[
                   input,
                   css`
-                    background: #edeadd;
+                    background: #292924;
                   `,
                 ]}
               >
@@ -371,7 +383,13 @@ export const OrderParamsCard = ({
                 >
                   <span
                     css={css`
-                      color: #757575;
+                      color: rgba(230, 230, 206, 0.4);
+                      font-family: 'Work Sans';
+                      font-size: 13px;
+                      font-style: normal;
+                      font-weight: 400;
+                      line-height: 140%; /* 18.2px */
+                      letter-spacing: -0.39px;
                     `}
                   >
                     Pay
@@ -394,13 +412,16 @@ export const OrderParamsCard = ({
                       disableUnderline: true,
                     }}
                     sx={{
-                      height: '28px',
-                      fontSize: '20px',
-                      minHeight: '28px',
                       '& .MuiOutlinedInput-root': {
-                        height: '28px',
-                        minHeight: '28px',
                         padding: 0,
+                      },
+                      '& .MuiInput-input': {
+                        fontFamily: 'Work Sans',
+                        fontSize: 22,
+                        fontStyle: 'normal',
+                        fontWeight: 600,
+                        lineHeight: 1.3,
+                        color: 'rgba(230, 230, 206, 0.40)',
                       },
                     }}
                   />
@@ -414,7 +435,7 @@ export const OrderParamsCard = ({
                       css={css`
                         border-radius: 2px;
                         color: ${theme.text.primary};
-                        background: ${theme.palette.mode === 'dark' ? '#2832f5' : '#a4a8fe'};
+                        background: ${theme.palette.mode === 'dark' ? '#2832f5' : '#e1f25c'};
                         padding: 2px 6px;
                         font-size: 12px;
                         cursor: pointer;
@@ -429,17 +450,16 @@ export const OrderParamsCard = ({
                         align,
                         css`
                           cursor: pointer;
+                          background: #1c1c19;
+                          padding: 4px 8px;
+                          display: flex;
+                          align-items: center;
+                          gap: 4px;
+                          margin-left: 4px;
+                          border-radius: 16px;
                         `,
                       ]}
                     >
-                      <span
-                        css={css`
-                          margin: 0 4px;
-                          color: ${theme.palette.mode === 'dark' ? '#727272' : '#000'};
-                        `}
-                      >
-                        {tradePool?.symbol}
-                      </span>
                       <img
                         css={css`
                           border-radius: 50%;
@@ -449,7 +469,20 @@ export const OrderParamsCard = ({
                         height="16"
                         width="16"
                       />
-                      <div
+                      <span
+                        css={css`
+                          font-family: 'Work Sans';
+                          font-size: 13px;
+                          font-style: normal;
+                          font-weight: 400;
+                          line-height: 140%;
+                          letter-spacing: -0.39px;
+                          color: ${theme.palette.mode === 'dark' ? '#727272' : '#E6E6CE'};
+                        `}
+                      >
+                        {tradePool?.symbol}
+                      </span>
+                      {/* <div
                         css={css`
                           background: linear-gradient(180deg, #84ff9f 0%, #ffe071 49.53%, #f96262 96.35%);
                           display: flex;
@@ -462,7 +495,7 @@ export const OrderParamsCard = ({
                         `}
                       >
                         <KeyboardArrowDownIcon sx={{ color: '#000', height: '16px', width: '16px' }} />
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>
@@ -534,8 +567,7 @@ export const OrderParamsCard = ({
                   css={[
                     input,
                     css`
-                      background: ${theme.background.second};
-                      color: ${theme.text.primary};
+                      background: #292924;
                     `,
                   ]}
                 >
@@ -545,24 +577,19 @@ export const OrderParamsCard = ({
                       align-items: center;
                       justify-content: space-between;
                       width: 100%;
+                      color: rgba(230, 230, 206, 0.4);
+                      font-family: 'Work Sans';
+                      font-size: 13px;
+                      font-style: normal;
+                      font-weight: 400;
+                      line-height: 140%; /* 18.2px */
+                      letter-spacing: -0.39px;
                     `}
                   >
-                    <span
-                      css={css`
-                        color: #757575;
-                      `}
-                    >
-                      Price
-                    </span>
+                    <span>Price</span>
                     <div>
-                      <span
-                        css={css`
-                          color: #757575;
-                        `}
-                      >
-                        Leverage:
-                      </span>
-                      <span>{leverage}x</span>
+                      <span>Leverage:</span>
+                      <span> {leverage}x</span>
                     </div>
                   </div>
                   <div
@@ -584,13 +611,16 @@ export const OrderParamsCard = ({
                         disableUnderline: true,
                       }}
                       sx={{
-                        height: '28px',
-                        fontSize: '20px',
-                        minHeight: '28px',
                         '& .MuiOutlinedInput-root': {
-                          height: '28px',
-                          minHeight: '28px',
                           padding: 0,
+                        },
+                        '& .MuiInput-input': {
+                          fontFamily: 'Work Sans',
+                          fontSize: 22,
+                          fontStyle: 'normal',
+                          fontWeight: 600,
+                          lineHeight: 1.3,
+                          color: 'rgba(230, 230, 206, 0.40)',
                         },
                       }}
                     />
@@ -598,10 +628,19 @@ export const OrderParamsCard = ({
                 </div>
               )}
             </div>
-            <div>
+            <div
+              css={css`
+                margin-top: 12px;
+              `}
+            >
               <p
                 css={css`
-                  color: ${theme.text.primary};
+                  color: #e6e6ce;
+                  font-family: 'Work Sans';
+                  font-size: 12px;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: 130%; /* 15.6px */
                 `}
               >
                 Leverage Slider
@@ -714,12 +753,21 @@ export const OrderParamsCard = ({
                   align,
                   css`
                     justify-content: space-between;
-                    color: ${theme.text.primary};
+                    color: #8e8e80;
+                    font-family: 'Work Sans';
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 130%; /* 15.6px */
                   `,
                 ]}
               >
                 <span>Collateral In</span>
-                <span>
+                <span
+                  css={css`
+                    color: #e6e6ce;
+                  `}
+                >
                   {isNaN(positionSizeDai.toNumber()) ? '--' : getBigNumberStr(positionSizeDai, 6)} {tradePool?.symbol}
                 </span>
               </p>
@@ -728,12 +776,23 @@ export const OrderParamsCard = ({
                   align,
                   css`
                     justify-content: space-between;
-                    color: ${theme.text.primary};
+                    color: #8e8e80;
+                    font-family: 'Work Sans';
+                    font-size: 12px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: 130%; /* 15.6px */
                   `,
                 ]}
               >
                 <span>Leverage</span>
-                <span>{leverage}</span>
+                <span
+                  css={css`
+                    color: #e6e6ce;
+                  `}
+                >
+                  {leverage}
+                </span>
               </p>
               {/*{tradeModel === TradeMode.DEGEN && (*/}
               {/*  <div>*/}

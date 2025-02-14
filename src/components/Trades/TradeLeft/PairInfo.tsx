@@ -105,6 +105,7 @@ export const PairInfo = ({ setIsOpenSelectToken, setTradeModel, tradeModel }: Pa
           card,
           css`
             background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(2px);
             position: relative;
             @media screen and (max-width: 1500px) {
               overflow: auto;
