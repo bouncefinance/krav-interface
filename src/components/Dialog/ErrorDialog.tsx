@@ -3,9 +3,9 @@ import { Dialog, DialogContent, useMediaQuery, useTheme } from '@mui/material'
 import { errorDialog } from './sytle'
 import CloseSharpIcon from '@mui/icons-material/CloseSharp'
 import { useRootStore } from '../../store/root'
-import { ReactComponent as ErrorIcon } from '../../assets/imgs/error_icon.svg'
-import { ReactComponent as ErrorLogo } from '../../assets/imgs/error_logo.svg'
-import { ReactComponent as ErrorDarkLogo } from '../../assets/imgs/darkModel/error_logo_dark.svg'
+// import { ReactComponent as ErrorIcon } from '../../assets/imgs/error_icon.svg'
+// import { ReactComponent as ErrorLogo } from '../../assets/imgs/error_logo.svg'
+// import { ReactComponent as ErrorDarkLogo } from '../../assets/imgs/darkModel/error_logo_dark.svg'
 import KRAVButton from '../KravUIKit/KravButton'
 import { TransactionAction } from '../../store/TransactionSlice'
 import { css } from '@emotion/react'
@@ -30,7 +30,7 @@ export const ErrorDialog = () => {
       <DialogContent sx={{ padding: 0, color: theme.text.primary }}>
         <div css={errorDialog}>
           <div className="error-dialog-title">
-            <ErrorIcon />
+            {/*<ErrorIcon />*/}
             <span
               css={css`
                 font-size: ${isMobile ? '18px' : '20px'};
@@ -52,8 +52,9 @@ export const ErrorDialog = () => {
           <div className="error-dialog-content">
             <p>There is a problem with {errorContent.action}.</p>
             {errorContent?.reason && <p>{errorContent.reason}</p>}
-            {theme.palette.mode === 'dark' ? <ErrorDarkLogo /> : <ErrorLogo />}
+            {/*{theme.palette.mode === 'dark' ? <ErrorDarkLogo /> : <ErrorLogo />}*/}
             <KRAVButton
+              sx={{ mt: 32 }}
               onClick={() => {
                 const errorContent = {
                   dialogVisibility: false,

@@ -56,6 +56,7 @@ export const SuccessDialog = () => {
             <p>{successContent.action} successfully.</p>
             {/*{theme.palette.mode === 'dark' ? <SuccessDarkLogo /> : <SuccessLogo />}*/}
             <KRAVButton
+              sx={{ mt: 32 }}
               onClick={() => {
                 const errorContent = {
                   dialogVisibility: false,
