@@ -12,18 +12,14 @@ import { useWeb3React } from '@web3-react/core'
 import { css } from '@emotion/react'
 import { useGetApr } from '../hook/hookV8/useGetApr'
 import { useInterval } from '../hook/hookV8/useInterval'
-import { ReactComponent as CardIcon } from '../assets/imgs/card_mode_icon.svg'
-import { ReactComponent as TableIcon } from '../assets/imgs/table_mode_icon.svg'
-import { useTheme } from '@mui/material'
 
 export const Liquidity = () => {
   const { account, provider, chainId } = useWeb3React()
-  const theme = useTheme()
   const [createLiquidityPool, setCreateLiquidityPool] = useState(false)
   const [addLiquidity, setAddLiquidity] = useState(false)
   const [removeLiquidity, setRemoveLiquidity] = useState(false)
   const [isLoadingUserPosition, setIsLoadingUserPosition] = useState(true)
-  const [isTable, setIsTable] = useState(false)
+  const [isTable] = useState(true)
   const userBackend = useUserPosition()
   const { aprList } = useGetApr()
   const allPoolParams = useRootStore((store) => store.allPoolParams)
@@ -48,7 +44,7 @@ export const Liquidity = () => {
       >
         <AddLiquidity isOpen={addLiquidity} setIsOpen={setAddLiquidity} />
         <RemoveLiquidity isOpen={removeLiquidity} setIsOpen={setRemoveLiquidity} />
-        <div
+        {/* <div
           css={css`
             width: 100%;
             display: flex;
@@ -101,7 +97,7 @@ export const Liquidity = () => {
               onClick={() => setIsTable(true)}
             />
           </div>
-        </div>
+        </div> */}
         <YourPosition
           setAddLiquidity={setAddLiquidity}
           setRemoveLiquidity={setRemoveLiquidity}

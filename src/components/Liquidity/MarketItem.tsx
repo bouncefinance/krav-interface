@@ -58,30 +58,38 @@ export const MarketItem = ({ setAddLiquidity, poolParams, aprList }: MarketItemP
             margin-left: 8px;
           `}
         >
-          <p>{poolParams.symbol}</p>
+          <p style={{ color: '#fff' }}>{poolParams.symbol}</p>
           <p className="small grey">{poolParams.symbol}</p>
         </div>
       </div>
       {/*<div>*/}
       {/*  1 BTC={poolParams.proportionBTC} {poolParams.symbol}*/}
       {/*</div>*/}
-      <div>{apr.toFixed(2)}%</div>
-      <div>{isNaN(poolParams.utilization.toNumber()) ? 0 : poolParams.utilization.toFixed(2)}%</div>
+      <div style={{ color: '#fff' }}>{apr.toFixed(2)}%</div>
+      <div style={{ color: '#fff' }}>
+        {isNaN(poolParams.utilization.toNumber()) ? 0 : poolParams.utilization.toFixed(2)}%
+      </div>
       <div>
-        <p>
+        <p style={{ color: '#fff' }}>
           {poolParams.poolTotalSupply?.toFixed(2)} {poolParams.symbol}
         </p>
         {/*<p className="small grey">({poolParams.poolTotalSupply?.div(poolParams.proportionBTC).toFixed(2)}&nbsp;BTC) </p>*/}
       </div>
-      <div>
+      <div style={{ color: '#fff' }}>
         {getBigNumberStr(poolSupply, 2)} {poolParams.symbol}
       </div>
-      <div>
+      <div style={{ color: '#fff' }}>
         {getBigNumberStr(lpReward, 2)} {poolParams.symbol}
       </div>
       <div>
         {account && (
           <KravButtonHollow
+            style={{
+              borderRadius: '80px',
+              border: '1px solid #fff',
+              color: '#DEDEDE',
+              backgroundColor: 'transparent',
+            }}
             onClick={() => {
               setAddLiquidity(true)
               setLiquidityInfo(poolParams)
