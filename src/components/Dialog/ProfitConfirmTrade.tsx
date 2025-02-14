@@ -75,7 +75,7 @@ export const ProfitConfirmTrade = ({
 
   const activeTab = useMemo(() => {
     return css`
-      color: ${theme.text.primary};
+      // color: ${theme.text.primary};
       font-weight: 700;
     `
   }, [theme])
@@ -276,7 +276,7 @@ export const ProfitConfirmTrade = ({
                       display: flex;
                       align-items: center;
                       justify-content: space-between;
-                      background: ${theme.background.second};
+                      // background: ${theme.background.second};
                       > span {
                         cursor: pointer;
                       }
@@ -415,7 +415,7 @@ export const ProfitConfirmTrade = ({
                     css={css`
                       display: flex;
                       align-items: center;
-                      background: ${theme.background.second};
+                      // background: ${theme.background.second};
                       justify-content: space-between;
                       > span {
                         cursor: pointer;
