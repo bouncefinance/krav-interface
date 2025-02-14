@@ -28,7 +28,7 @@ export const pairInfo = css`
     white-space: nowrap;
     min-width: 96px;
     height: 40px;
-    padding: 0 12px;
+    padding: 0 24px;
     color: #757575;
     font-size: 12px;
     > p {
@@ -55,7 +55,7 @@ export const pairInfo = css`
 
 export const card = css`
   background: #fff;
-  border-radius: 8px;
+  border-radius: 16px;
   display: flex;
   flex-direction: row;
   align-items: center;

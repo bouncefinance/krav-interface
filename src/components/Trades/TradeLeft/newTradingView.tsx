@@ -18,7 +18,7 @@ export default function TradingViewWidget() {
         symbol: tradingViewSymbol,
         interval: 'D',
         timezone: 'Etc/UTC',
-        theme: theme.palette.mode === 'dark' ? 'dark' : 'light',
+        theme: 'light',
         style: '1',
         locale: 'en',
         enable_publishing: false,
@@ -43,6 +43,9 @@ export default function TradingViewWidget() {
         id="tradingview_2daf6"
         css={css`
           height: 480px;
+          border-radius: 16px;
+          overflow: hidden;
+          padding: 12px;
         `}
       />
     </div>

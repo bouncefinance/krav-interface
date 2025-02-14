@@ -65,7 +65,6 @@ export const PairInfo = ({ setIsOpenSelectToken, setTradeModel, tradeModel }: Pa
 
   const currentMode = useMemo(() => {
     if (tradeModel === TradeMode.DEGEN) return 'Degen'
-    if (tradeModel === TradeMode.BASIC) return 'Basic'
     return 'Pro'
   }, [tradeModel])
 
@@ -223,14 +222,14 @@ export const PairInfo = ({ setIsOpenSelectToken, setTradeModel, tradeModel }: Pa
                       >
                         Pro
                       </MenuItem>
-                      <MenuItem
-                        onClick={() => {
-                          setTradeModel(TradeMode.BASIC)
-                          setModeAnchorEl(null)
-                        }}
-                      >
-                        Basic
-                      </MenuItem>
+                      {/*<MenuItem*/}
+                      {/*  onClick={() => {*/}
+                      {/*    setTradeModel(TradeMode.BASIC)*/}
+                      {/*    setModeAnchorEl(null)*/}
+                      {/*  }}*/}
+                      {/*>*/}
+                      {/*  Basic*/}
+                      {/*</MenuItem>*/}
                     </Menu>
                   </>
                 )}
@@ -244,18 +243,20 @@ export const PairInfo = ({ setIsOpenSelectToken, setTradeModel, tradeModel }: Pa
                     display: flex;
                     align-items: center;
                     margin-left: ${isMobile ? '8px' : '0'};
+                    margin-right: 32px;
                   `,
                 ]}
               >
-                <div
-                  className="symbol"
-                  css={css`
-                    display: flex;
-                    align-items: center;
-                  `}
-                >
-                  {tradePair.titleSymbol}
-                </div>
+                <img src={tradePair.logoSource.default} height={'24'} width={'24'} alt={''} />
+                {/*<div*/}
+                {/*  className="symbol"*/}
+                {/*  css={css`*/}
+                {/*    display: flex;*/}
+                {/*    align-items: center;*/}
+                {/*  `}*/}
+                {/*>*/}
+                {/*  {tradePair.titleSymbol}*/}
+                {/*</div>*/}
                 <div
                   onClick={() => {
                     if (showSwitch) {
@@ -265,6 +266,7 @@ export const PairInfo = ({ setIsOpenSelectToken, setTradeModel, tradeModel }: Pa
                   css={css`
                     display: flex;
                     align-items: center;
+                    margin-left: 8px;
                   `}
                 >
                   <span
@@ -279,7 +281,6 @@ export const PairInfo = ({ setIsOpenSelectToken, setTradeModel, tradeModel }: Pa
                   {showSwitch && (
                     <div
                       css={css`
-                        background: linear-gradient(180deg, #84ff9f 0%, #ffe071 49.53%, #f96262 96.35%);
                         display: flex;
                         align-items: center;
                         justify-content: center;
@@ -299,8 +300,7 @@ export const PairInfo = ({ setIsOpenSelectToken, setTradeModel, tradeModel }: Pa
               <div
                 className="info-card"
                 css={css`
-                  padding: 0 12px !important;
-                  border-left: ${theme.splitLine.primary};
+                  padding: 0 24px !important;
                 `}
               >
                 <p>
@@ -319,8 +319,7 @@ export const PairInfo = ({ setIsOpenSelectToken, setTradeModel, tradeModel }: Pa
               <div
                 className="info-card"
                 css={css`
-                  padding: 0 12px !important;
-                  border-left: ${theme.splitLine.primary};
+                  padding: 0 24px !important;
                 `}
               >
                 <p>
@@ -336,12 +335,7 @@ export const PairInfo = ({ setIsOpenSelectToken, setTradeModel, tradeModel }: Pa
                   <span>{formatNumber(openDaiShort?.toString() || '', 2, false) || '-'}</span>
                 </p>
               </div>
-              <div
-                className="info-card"
-                css={css`
-                  border-left: ${theme.splitLine.primary};
-                `}
-              >
+              <div className="info-card" css={css``}>
                 <p>
                   <Trans>Borrowing(L)</Trans>
                 </p>
@@ -368,12 +362,7 @@ export const PairInfo = ({ setIsOpenSelectToken, setTradeModel, tradeModel }: Pa
                   </span>
                 </p>
               </div>
-              <div
-                className="info-card"
-                css={css`
-                  border-left: ${theme.splitLine.primary};
-                `}
-              >
+              <div className="info-card">
                 <p>
                   <Trans>Borrowing(S)</Trans>
                 </p>
@@ -411,30 +400,6 @@ export const PairInfo = ({ setIsOpenSelectToken, setTradeModel, tradeModel }: Pa
               border-radius: 8px;
             `}
           >
-            <div
-              css={css`
-                font-family: 'Inter';
-                font-size: 12px;
-                font-weight: 600;
-                font-style: normal;
-                line-height: 130%;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                height: 30px;
-                width: 83px;
-                text-align: center;
-                cursor: pointer;
-                border-radius: 8px;
-                background: ${tradeModel === TradeMode.BASIC
-                  ? 'linear-gradient(180deg, #84ff9f 0%, #ffe071 49.53%, #f96262 96.35%)'
-                  : 'transparent'};
-                color: ${tradeModel === TradeMode.BASIC ? '#000' : theme.text.primary};
-              `}
-              onClick={() => setTradeModel(TradeMode.BASIC)}
-            >
-              Basic
-            </div>
             <div
               css={css`
                 font-family: 'Inter';

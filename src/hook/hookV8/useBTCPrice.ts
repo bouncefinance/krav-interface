@@ -20,7 +20,7 @@ export const useBTCPrice = () => {
     try {
       const req = await fetch(BTC_PRICE_API + pairConfig[tradePairIndex].apiSymbol)
       const price = await req.json()
-      const res = new BigNumber(price.data.price)
+      const res = new BigNumber(price.data.lastPrice)
       if (res.isGreaterThan(BTCPrice)) setIsBTCRise(true)
       else setIsBTCRise(false)
       setBTCPrice(res)

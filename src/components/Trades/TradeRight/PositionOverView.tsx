@@ -22,7 +22,7 @@ export const PositionOverView = () => {
           border-bottom: ${theme.splitLine.primary};
         `}
       >
-        Contract Specifications
+        Long BTC
       </div>
       <div
         css={css`

@@ -19,7 +19,7 @@ export const SecondChart = () => {
         symbol: tradingViewSymbol,
         interval: '1',
         timezone: 'Etc/UTC',
-        theme: theme.palette.mode === 'dark' ? 'dark' : 'light',
+        theme: 'light',
         style: '3',
         locale: 'en',
         enable_publishing: false,

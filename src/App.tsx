@@ -8,7 +8,7 @@ import { messages as csMessages } from './locales/zh/messages'
 import { Trade } from './pages/Trade'
 import { AppTheme } from './theme/appTheme'
 import Web3Provider from './connectors/Web3Provider'
-import { Footer } from './components/Footer/Footer'
+// import { Footer } from './components/Footer/Footer'
 import { Liquidity } from './pages/Liquidity'
 import { useEffect } from 'react'
 import { useFactory } from './hook/hookV8/useFactory'
@@ -21,17 +21,18 @@ import { TransactionDialog } from './components/Dialog/TransactionDialog'
 // import { HomeReferral } from './pages/home/HomeReferral'
 // import { HomeFarm } from './pages/home/HomeFarm'
 import { css } from '@emotion/react'
-import DashboardBg from './assets/imgs/dashboard_bg.png'
-import DashboardDarkBg from './assets/imgs/darkModel/dashboard_bg_dark.png'
+// import DashboardBg from './assets/imgs/dashboard_bg.png'
+// import DashboardDarkBg from './assets/imgs/darkModel/dashboard_bg_dark.png'
 import { SuccessSnackbar } from './components/Dialog/SuccessSnackbar'
 import { SuccessDialog } from './components/Dialog/SuccessDialog'
 // import { Statistics } from './pages/Statistics'
-import { useTheme } from '@mui/material'
+// import { useTheme } from '@mui/material'
 import { useInterval } from './hook/hookV8/useInterval'
 import { useRootStore } from './store/root'
 import { useUserPosition } from './hook/hookV8/useUserPosition'
 import { useChainIdListener } from './hook/hookV8/useChainIdListener'
 import { DEFAULT_CHAIN } from './constant/chain'
+import DashboardBg from './assets/imgs/bounce-quanto-bg.png'
 
 i18n.load({
   en: enMessages,
@@ -50,7 +51,7 @@ const FullApp = () => {
   useInterval(factory, 60000)
   useInterval(async () => getUserPosition(), 15000)
   useBTCPrice()
-  const theme = useTheme()
+  // const theme = useTheme()
 
   useEffect(() => {
     factory(DEFAULT_CHAIN).then()
@@ -72,9 +73,20 @@ const FullApp = () => {
         className="App"
         css={css`
           position: relative;
-          background: url(${theme.palette.mode === 'dark' ? DashboardDarkBg : DashboardBg});
+          background: url(${DashboardBg});
+          background-repeat: no-repeat;
+          background-size: cover;
         `}
       >
+        <div
+          css={css`
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            backdrop-filter: blur(8px);
+            z-index: 0;
+          `}
+        />
         <div className="fullApp">
           <I18nProvider i18n={i18n}>
             <ErrorDialog />
@@ -93,7 +105,7 @@ const FullApp = () => {
               {/*<Route path={'/portfolio/referral'} element={<HomeReferral />} />*/}
               {/*<Route path={'/statistics'} element={<Statistics />} />*/}
             </Routes>
-            <Footer />
+            {/*<Footer />*/}
           </I18nProvider>
         </div>
       </div>

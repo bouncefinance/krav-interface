@@ -1,12 +1,12 @@
 /** @jsxImportSource @emotion/react */
-import { Box, Link, useMediaQuery, useTheme } from '@mui/material'
+import { Box, useMediaQuery, useTheme } from '@mui/material'
 import { Trans } from '@lingui/macro'
 import { header, router, UnSupport } from './sytle'
 import { align } from '../../globalStyle'
 import { ReactComponent as BounceDarkLogo } from '../../assets/imgs/bounce/logo-white.svg'
 import { ReactComponent as BounceLogo } from '../../assets/imgs/bounce/logo.svg'
-import { ReactComponent as KravLogo } from '../../assets/imgs/tokens/karv_icon.svg'
-import { ReactComponent as KravDarkLogo } from '../../assets/imgs/tokens/karv_icon_dark.svg'
+// import { ReactComponent as KravLogo } from '../../assets/imgs/tokens/karv_icon.svg'
+// import { ReactComponent as KravDarkLogo } from '../../assets/imgs/tokens/karv_icon_dark.svg'
 import { css } from '@emotion/react'
 import { ConnectWalletDialog } from '../../components/Dialog/ConnectWallet'
 import { useCallback, useEffect, useMemo, useState } from 'react'
@@ -48,25 +48,25 @@ export const Header = () => {
 
   const routerActive = useMemo(() => {
     return css`
-      background: ${theme.palette.mode === 'dark' ? '#4b4b4b' : 'black'};
-      color: white;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+      background: ${theme.palette.mode === 'dark' ? '#4b4b4b' : '#F5F4F3'};
+      color: #000000;
+      //box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     `
   }, [theme])
 
   const routerColor = useMemo(() => {
     return css`
-      color: ${theme.text.primary};
+      color: rgba(33, 32, 28, 0.4);
       :hover {
-        color: rgb(117, 117, 117);
+        color: #000000;
       },
     `
   }, [theme])
 
-  const isHomePath = useMemo(() => {
-    const pathList = ['/portfolio', '/portfolio/stake', '/portfolio/farm', '/portfolio/referral', '/portfolio/reward']
-    return pathList.includes(pathname)
-  }, [pathname])
+  // const isHomePath = useMemo(() => {
+  //   const pathList = ['/portfolio', '/portfolio/stake', '/portfolio/farm', '/portfolio/referral', '/portfolio/reward']
+  //   return pathList.includes(pathname)
+  // }, [pathname])
 
   const isTradePath = useMemo(() => {
     return pathname.includes('/trade')
@@ -115,7 +115,9 @@ export const Header = () => {
         css={[
           header,
           css`
-            background: ${isHomePath ? theme.background.fourth : ''};
+            background: ${theme.background.fourth};
+            z-index: 1;
+            position: relative;
           `,
         ]}
       >
@@ -137,33 +139,40 @@ export const Header = () => {
                 )}
               </NavLink>
             </div>
-            <div>
-              <Link underline="none" href="https://app.krav.trade" target="_blank">
-                <Box sx={{ display: 'flex', alignItems: 'center', fontSize: 12, color: theme.text.primary }}>
-                  Powered by KRAV &nbsp;
-                  {theme.palette.mode === 'dark' ? (
-                    <KravDarkLogo height="14" width="14" />
-                  ) : (
-                    <KravLogo height="14" width="14" />
-                  )}
-                </Box>
-              </Link>
-            </div>
+            {/*<div>*/}
+            {/*  <Link underline="none" href="https://app.krav.trade" target="_blank">*/}
+            {/*    <Box sx={{ display: 'flex', alignItems: 'center', fontSize: 12, color: theme.text.primary }}>*/}
+            {/*      Powered by KRAV &nbsp;*/}
+            {/*      {theme.palette.mode === 'dark' ? (*/}
+            {/*        <KravDarkLogo height="14" width="14" />*/}
+            {/*      ) : (*/}
+            {/*        <KravLogo height="14" width="14" />*/}
+            {/*      )}*/}
+            {/*    </Box>*/}
+            {/*  </Link>*/}
+            {/*</div>*/}
           </div>
-
+        </div>
+        <div
+          css={css`
+            height: 100%;
+          `}
+        >
           {!isMobile && (
             <Box
               sx={{
+                height: '100%',
+                display: 'flex',
                 '& a:hover': {
-                  background: 'none',
-                  boxShadow: 'none',
+                  // background: 'none',
+                  // boxShadow: 'none',
                   color: '#757575',
                 },
-                '& a.active:hover': {
-                  background: '#000000',
-                  color: '#fff',
-                  boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
-                },
+                // '& a.active:hover': {
+                //   background: '#000000',
+                //   color: '#fff',
+                //   boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
+                // },
               }}
             >
               <NavLink to={'/trade'} css={[router, routerColor, isTradePath ? routerActive : '']}>

@@ -79,12 +79,11 @@ export const routerActive = css`
 
 export const router = css`
   margin-right: 16px;
-  padding: 8px;
-  border-radius: 8px;
-  height: 32px;
-  font-size: 14px;
-  font-weight: 400;
+  padding: 28px 24px;
+  font-size: 16px;
+  font-weight: 600;
   letter-spacing: -0.01em;
+  color: rgba(33, 32, 28, 0.4);
   cursor: pointer;
   font-family: 'Inter';
   text-decoration: none;

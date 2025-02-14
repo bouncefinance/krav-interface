@@ -101,7 +101,7 @@ export const PositionsItem = ({ openTrade, index, pool }: PositionsItemProps) =>
           <div>${new BigNumber(openTrade.openPrice).toFixed(tradePair.fixDecimals)}</div>
           <div
             css={css`
-              color: #ffb800;
+              color: #000000;
             `}
           >
             ${BTCPrice.toFixed(tradePair.fixDecimals)}
@@ -168,7 +168,7 @@ export const PositionsItem = ({ openTrade, index, pool }: PositionsItemProps) =>
           <div>${new BigNumber(openTrade.openPrice).toFixed(tradePair.fixDecimals)}</div>
           <div
             css={css`
-              color: #ffb800;
+              color: #000000;
             `}
           >
             ${BTCPrice.toFixed(tradePair.fixDecimals)}

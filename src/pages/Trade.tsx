@@ -41,6 +41,8 @@ export const Trade = () => {
         padding: ${isMobile ? '14px 16px' : '16px 32px 0'};
         width: 100%;
         font-family: 'Inter';
+        z-index: 1;
+        position: relative;
       `}
     >
       <TradeLeft

@@ -41,6 +41,8 @@ export const Liquidity = () => {
           liquidity,
           css`
             display: ${createLiquidityPool ? 'none' : ''};
+            z-index: 1;
+            position: relative;
           `,
         ]}
       >

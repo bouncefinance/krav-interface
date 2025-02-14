@@ -72,7 +72,7 @@ export const MyTrade = () => {
               backgroundColor: '#000',
             },
             '& .Mui-selected': {
-              color: '#FFB800!important',
+              color: '#000000!important',
             },
           }}
         >

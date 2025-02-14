@@ -54,7 +54,7 @@ export const lightTheme = createTheme({
     primary: '#ffffff',
     second: '#f6f6f6',
     third: '#000000',
-    fourth: '#ffffff',
+    fourth: '#EDEADD',
   },
 })
 
