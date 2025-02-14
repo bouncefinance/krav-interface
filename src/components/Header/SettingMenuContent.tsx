@@ -111,6 +111,7 @@ export const SettingMenuContent = ({
           <p
             css={css`
               color: #757575;
+              font-weight: 700 !important;
             `}
           >
             Total assets

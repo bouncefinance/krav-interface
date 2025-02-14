@@ -56,6 +56,7 @@ export const YourPosition = ({
             className="liquidity-table grey nowrap"
             css={css`
               margin-top: 24px;
+              font-weight: 700;
             `}
           >
             <div style={{ color: '#757575' }}>ASSET</div>
