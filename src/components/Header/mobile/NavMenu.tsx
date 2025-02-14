@@ -7,11 +7,11 @@ import CloseSharpIcon from '@mui/icons-material/CloseSharp'
 import { css } from '@emotion/react'
 import { Trans } from '@lingui/macro'
 import { useMemo } from 'react'
-import { align } from '../../../globalStyle'
-import { ReactComponent as ThemeIconLight } from '../../../assets/imgs/model_icon.svg'
-import { ReactComponent as ThemeIconDark } from '../../../assets/imgs/darkModel/model_icon_dark.svg'
-import { KravModeSwitch } from '../../KravUIKit/KravModeSwitch'
-import { useSetThemeContext } from '../../../theme/appTheme'
+// import { align } from '../../../globalStyle'
+// import { ReactComponent as ThemeIconLight } from '../../../assets/imgs/model_icon.svg'
+// import { ReactComponent as ThemeIconDark } from '../../../assets/imgs/darkModel/model_icon_dark.svg'
+// import { KravModeSwitch } from '../../KravUIKit/KravModeSwitch'
+// import { useSetThemeContext } from '../../../theme/appTheme'
 
 type NavMenuProps = {
   isOpen: boolean
@@ -19,7 +19,7 @@ type NavMenuProps = {
 }
 export const NavMenu = ({ isOpen, setIsOpen }: NavMenuProps) => {
   const theme = useTheme()
-  const toggleTheme = useSetThemeContext()
+  // const toggleTheme = useSetThemeContext()
   const routerColor = useMemo(() => {
     return css`
       color: ${theme.text.primary};
@@ -74,26 +74,26 @@ export const NavMenu = ({ isOpen, setIsOpen }: NavMenuProps) => {
         {/*  <Trans>Statistics</Trans>*/}
         {/*</NavLink>*/}
       </div>
-      <div
-        className="action"
-        css={css`
-          justify-content: space-between;
-          display: flex;
-          padding: 16px;
-        `}
-      >
-        <div css={align}>
-          {theme.palette.mode === 'light' ? <ThemeIconLight /> : <ThemeIconDark />}
-          <span
-            css={css`
-              margin-left: 12px;
-            `}
-          >
-            {theme.palette.mode === 'light' ? 'Light Mode' : 'Dark Mode'}
-          </span>
-        </div>
-        <KravModeSwitch checked={true} onClick={toggleTheme} />
-      </div>
+      {/*<div*/}
+      {/*  className="action"*/}
+      {/*  css={css`*/}
+      {/*    justify-content: space-between;*/}
+      {/*    display: flex;*/}
+      {/*    padding: 16px;*/}
+      {/*  `}*/}
+      {/*>*/}
+      {/*  <div css={align}>*/}
+      {/*    {theme.palette.mode === 'light' ? <ThemeIconLight /> : <ThemeIconDark />}*/}
+      {/*    <span*/}
+      {/*      css={css`*/}
+      {/*        margin-left: 12px;*/}
+      {/*      `}*/}
+      {/*    >*/}
+      {/*      {theme.palette.mode === 'light' ? 'Light Mode' : 'Dark Mode'}*/}
+      {/*    </span>*/}
+      {/*  </div>*/}
+      {/*  <KravModeSwitch checked={true} onClick={toggleTheme} />*/}
+      {/*</div>*/}
     </SwipeableDrawer>
   )
 }
