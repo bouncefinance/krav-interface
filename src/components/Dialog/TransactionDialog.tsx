@@ -77,7 +77,9 @@ export const TransactionDialog = () => {
               {/*  <ApproveIcon className="flash" />*/}
               {/*)}*/}
 
-              <KRAVButton disabled={true}>Awaiting...</KRAVButton>
+              <KRAVButton sx={{ mt: 32 }} disabled={true}>
+                Awaiting...
+              </KRAVButton>
             </div>
           </div>
         </DialogContent>
@@ -127,7 +129,9 @@ export const TransactionDialog = () => {
               {/*  <InteractionIcon className="flash" />*/}
               {/*)}*/}
 
-              <KRAVButton disabled={true}>Awaiting...</KRAVButton>
+              <KRAVButton sx={{ mt: 32 }} disabled={true}>
+                Awaiting...
+              </KRAVButton>
             </div>
           </div>
         </DialogContent>
@@ -173,7 +177,9 @@ export const TransactionDialog = () => {
               {/*  <PendingIcon className="flash" />*/}
               {/*)}*/}
 
-              <KRAVButton disabled={true}>Awaiting...</KRAVButton>
+              <KRAVButton sx={{ mt: 32 }} disabled={true}>
+                Awaiting...
+              </KRAVButton>
             </div>
           </div>
         </DialogContent>
