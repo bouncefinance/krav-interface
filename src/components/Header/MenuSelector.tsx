@@ -88,6 +88,10 @@ export const MenuSelector = () => {
         sx={{
           '& .MuiPaper-root': {
             minWidth: 220,
+            minHeight: '53px',
+            '> ul': {
+              padding: 0,
+            },
           },
         }}
         id="network-menu"
@@ -107,6 +111,7 @@ export const MenuSelector = () => {
                   align-items: center;
                   justify-content: space-between;
                   width: 100%;
+                  padding: 8px 0;
                 `}
               >
                 <Trans>Trade</Trans>
@@ -123,6 +128,7 @@ export const MenuSelector = () => {
                   align-items: center;
                   justify-content: space-between;
                   width: 100%;
+                  padding: 8px 0;
                 `}
               >
                 <Trans>Liquidity</Trans>
