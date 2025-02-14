@@ -39,7 +39,7 @@ export const createTradeSlice: StateCreator<
   tradePool: {} as PoolParams,
   tradeModel: TradeMode.DEGEN,
   isOpenSelectToken: false,
-  tradePairIndex: 0,
+  tradePairIndex: 2,
   openTradeCard: false,
   setTradePool(tradePool) {
     set({ tradePool: tradePool })

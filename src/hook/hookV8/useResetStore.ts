@@ -20,7 +20,7 @@ export const useResetStore = () => {
     setUserOpenLimitList([] as TupleLimitOrder[])
     setUserOpenTradeList([] as Tuple[])
     setAllPoolParams([] as PoolParams[])
-    setTradePairIndex(0)
+    setTradePairIndex(2)
     setTradePool({} as PoolParams)
     setUserPositionDatas([] as UserData[])
     setUserAllOpenLimitList([] as UseAllLimitOrders[])

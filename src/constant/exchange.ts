@@ -84,16 +84,16 @@ export const EXCHANGE_CONFIG: ExchangeConfig = {
 }
 
 export const BASE_PAIR_CONFIG: ExchangeConfig = {
-  0: {
-    symbol: 'BTC',
-    chartSymbol: 'BINANCE:BTCUSDT',
-    apiSymbol: 'BTCUSDT',
-    titleSymbol: 'BTC/USDT',
-    pairIndex: 0,
-    fixDecimals: 2,
-    logoSource: require('../assets/imgs/tokens/bitcoin.svg'),
-    useDataFeed: false,
-  },
+  // 0: {
+  //   symbol: 'BTC',
+  //   chartSymbol: 'BINANCE:BTCUSDT',
+  //   apiSymbol: 'BTCUSDT',
+  //   titleSymbol: 'BTC/USDT',
+  //   pairIndex: 0,
+  //   fixDecimals: 2,
+  //   logoSource: require('../assets/imgs/tokens/bitcoin.svg'),
+  //   useDataFeed: false,
+  // },
   2: {
     symbol: 'BNB',
     chartSymbol: 'BINANCE:BNBUSDT',

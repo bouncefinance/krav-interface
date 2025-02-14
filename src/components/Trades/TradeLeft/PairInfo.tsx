@@ -83,8 +83,8 @@ export const PairInfo = ({ setIsOpenSelectToken, setTradeModel, tradeModel }: Pa
   }
 
   useEffect(() => {
-    setTradePairIndex(0)
-    return () => setTradePairIndex(0)
+    setTradePairIndex(2)
+    return () => setTradePairIndex(2)
   }, [showSwitch])
 
   useEffect(() => {
