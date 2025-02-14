@@ -11,7 +11,7 @@ export const input = css`
   padding: 8px 12px;
   gap: 8px;
   width: 310px;
-  border-radius: 4px;
+  border-radius: 10px;
   margin-bottom: 8px;
   @media screen and (max-width: 1330px) {
     width: 262px;
@@ -29,12 +29,12 @@ export const orderParamsTab = css`
   color: #757575;
   :hover {
     color: #fff;
-    background: black;
+    background: #978365;
   }
   @media screen and (max-width: 1200px) {
     :hover {
       color: #fff;
-      background: #757575;
+      background: #978365;
     }
   }
 `

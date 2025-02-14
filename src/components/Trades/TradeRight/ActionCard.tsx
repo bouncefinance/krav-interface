@@ -82,9 +82,8 @@ export const ActionsCard = ({
       >
         <Box
           sx={{
-            padding: '4px',
-            background: theme.palette.mode === 'dark' ? theme.background.second : '#F7F7F7',
-            borderRadius: '4px',
+            background: theme.palette.mode === 'dark' ? theme.background.second : '',
+            borderRadius: '100px',
           }}
         >
           <Tabs
@@ -92,7 +91,7 @@ export const ActionsCard = ({
             onChange={handleChange}
             sx={{
               color: '#000000',
-              minHeight: '30px',
+              minHeight: '44px',
               '& .MuiTabs-indicator': { display: 'none' },
               '& .Mui-selected': { color: '#fff !important' },
             }}
@@ -100,8 +99,8 @@ export const ActionsCard = ({
             <Tab
               sx={{
                 width: '50%',
-                borderRadius: '4px',
-                minHeight: '30px',
+                borderRadius: '100px',
+                minHeight: '44px',
                 padding: 0,
                 background: orderType === 0 ? '#009B72 !important' : '',
               }}
@@ -110,8 +109,8 @@ export const ActionsCard = ({
             <Tab
               sx={{
                 width: '50%',
-                borderRadius: '4px',
-                minHeight: '30px',
+                borderRadius: '100px',
+                minHeight: '44px',
                 padding: 0,
                 background: orderType === 1 ? '#DB4C40 !important' : '',
               }}

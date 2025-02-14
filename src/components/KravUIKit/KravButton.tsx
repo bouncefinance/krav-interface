@@ -8,7 +8,7 @@ const KRAVButton = styled(Button)(({ theme }) => ({
   fontFamily: 'Inter',
   color: theme.button.defaultText,
   background: theme.button.defaultBg,
-  borderRadius: '4px',
+  borderRadius: '100px',
   padding: '10px 16px',
   height: '40px',
   fontSize: '14px',

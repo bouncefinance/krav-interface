@@ -64,14 +64,14 @@ export const card = css`
 
 export const actionCard = css`
   background: #fff;
-  border-radius: 8px;
+  border-radius: 16px;
   padding: 16px 24px;
   color: black;
 `
 
 export const bottomCard = css`
   margin-top: 18px;
-  border-radius: 8px;
+  border-radius: 16px;
   font-size: 14px;
   padding-bottom: 24px;
   > div:first-of-type {
@@ -92,7 +92,7 @@ export const bottomCard = css`
 
 export const chart = css`
   background: #fff;
-  border-radius: 8px;
+  border-radius: 16px;
   position: relative;
   margin-top: 12px;
 `

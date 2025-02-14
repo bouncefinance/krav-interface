@@ -4,8 +4,8 @@ import { errorDialog } from './sytle'
 import { ReactComponent as SuccessIcon } from '../../assets/imgs/success_icon.svg'
 import CloseSharpIcon from '@mui/icons-material/CloseSharp'
 import { TransactionAction } from '../../store/TransactionSlice'
-import { ReactComponent as SuccessLogo } from '../../assets/imgs/success_logo.svg'
-import { ReactComponent as SuccessDarkLogo } from '../../assets/imgs/darkModel/success_logo_dark.svg'
+// import { ReactComponent as SuccessLogo } from '../../assets/imgs/success_logo.svg'
+// import { ReactComponent as SuccessDarkLogo } from '../../assets/imgs/darkModel/success_logo_dark.svg'
 import KRAVButton from '../KravUIKit/KravButton'
 import { useRootStore } from '../../store/root'
 import { css } from '@emotion/react'
@@ -54,7 +54,7 @@ export const SuccessDialog = () => {
           </div>
           <div className="error-dialog-content">
             <p>{successContent.action} successfully.</p>
-            {theme.palette.mode === 'dark' ? <SuccessDarkLogo /> : <SuccessLogo />}
+            {/*{theme.palette.mode === 'dark' ? <SuccessDarkLogo /> : <SuccessLogo />}*/}
             <KRAVButton
               onClick={() => {
                 const errorContent = {

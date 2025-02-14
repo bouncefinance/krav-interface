@@ -50,7 +50,7 @@ enum ButtonText {
   SHORT = 'Short',
   INSUFFICIENT_BALANCE = 'Insufficient Balance',
   REACHED_LIMIT = 'Reached max positions limit',
-  MIN_SIZE = 'Min position size is 1500',
+  MIN_SIZE = 'Min position size is',
 }
 
 //TODO Add sl and tp setting
@@ -115,7 +115,7 @@ export const OrderParamsCard = ({
   }, [tradePool, userPositionDatas])
 
   const { account } = useWeb3React()
-  const [buttonState, setButtonState] = useState<ButtonText>(ButtonText.CONNECT_WALLET)
+  const [buttonState, setButtonState] = useState<ButtonText | string>(ButtonText.CONNECT_WALLET)
   const testTuple = useMemo(() => {
     return {
       trader: account!,
@@ -224,7 +224,7 @@ export const OrderParamsCard = ({
       setButtonState(ButtonText.REACHED_LIMIT)
     else if (positionSizeDai.isGreaterThan(PoolWalletBalance)) setButtonState(ButtonText.INSUFFICIENT_BALANCE)
     else if (!positionSizeDai.isEqualTo(0) && positionSizeDai.times(leverage).isLessThan(tradePool.minPositionLev))
-      setButtonState(ButtonText.MIN_SIZE)
+      setButtonState(ButtonText.MIN_SIZE + ' ' + tradePool.minPositionLev.toString())
     else if (!positionSizeDai.isGreaterThan(0)) setButtonState(ButtonText.ENTER_AMOUNT)
     else if (isBuy) setButtonState(ButtonText.LONG)
     else if (!isBuy) setButtonState(ButtonText.SHORT)
@@ -290,9 +290,10 @@ export const OrderParamsCard = ({
           <div
             css={css`
               display: flex;
-              padding: 6px;
               margin: 16px 0;
-              background: ${theme.background.second};
+              background: #edeadd;
+              padding: 4px;
+              border-radius: 100px;
             `}
           >
             <span
@@ -300,8 +301,10 @@ export const OrderParamsCard = ({
                 orderParamsTab,
                 css`
                   color: ${tabIndex === 0 ? 'white' : ''};
-                  background: ${tabIndex === 0 ? theme.background.third : ''};
-                  margin-right: 13px;
+                  background: ${tabIndex === 0 ? '#978365' : ''};
+                  width: 50%;
+                  text-align: center;
+                  border-radius: 100px;
                 `,
               ]}
               onClick={() => {
@@ -316,7 +319,10 @@ export const OrderParamsCard = ({
                 orderParamsTab,
                 css`
                   color: ${tabIndex === 1 ? 'white' : ''};
-                  background: ${tabIndex === 1 ? theme.background.third : ''};
+                  background: ${tabIndex === 1 ? '#978365' : ''};
+                  width: 50%;
+                  text-align: center;
+                  border-radius: 100px;
                 `,
               ]}
               onClick={() => {
@@ -333,32 +339,15 @@ export const OrderParamsCard = ({
               color: ${theme.text.primary};
             `}
           >
-            <span
-              css={css`
-                color: #757575;
-              `}
-            >
-              Available:
-            </span>{' '}
-            {getBigNumberStr(PoolWalletBalance, 6) || '0'} {tradePool?.symbol}
+            <span>Available:</span> {getBigNumberStr(PoolWalletBalance, 6) || '0'} {tradePool?.symbol}
           </div>
           <div
             css={css`
               margin-bottom: 12px;
             `}
           >
-            <span
-              css={css`
-                color: #757575;
-              `}
-            >
-              Order limit:
-            </span>{' '}
-            <span
-              css={css`
-                color: #2832f5;
-              `}
-            >
+            <span>Order limit:</span>{' '}
+            <span>
               {getBigNumberStr(orderLimit, 6) || '0'} {tradePool?.symbol}
             </span>
           </div>
@@ -368,7 +357,7 @@ export const OrderParamsCard = ({
                 css={[
                   input,
                   css`
-                    background: ${theme.background.second};
+                    background: #edeadd;
                   `,
                 ]}
               >
@@ -663,6 +652,55 @@ export const OrderParamsCard = ({
                   },
                 }}
               />
+            </div>
+            <div
+              css={css`
+                margin-bottom: 16px;
+              `}
+            >
+              {!account && (
+                <KRAVButton onClick={async () => setWalletDialogVisibility(true)}>
+                  {ButtonText.CONNECT_WALLET}
+                </KRAVButton>
+              )}
+              {account && isBuy && (
+                <KravLongButton
+                  disabled={
+                    buttonState === ButtonText.INSUFFICIENT_BALANCE ||
+                    buttonState === ButtonText.REACHED_LIMIT ||
+                    buttonState.startsWith('Min position size is') ||
+                    buttonState === ButtonText.ENTER_AMOUNT
+                  }
+                  onClick={async () => {
+                    if (buttonState === 'Connect Wallet') {
+                      setWalletDialogVisibility(true)
+                    } else {
+                      await handleButtonClick()
+                    }
+                  }}
+                >
+                  <Trans>{buttonState}</Trans>
+                </KravLongButton>
+              )}
+              {account && !isBuy && (
+                <KravShortButton
+                  disabled={
+                    buttonState === ButtonText.INSUFFICIENT_BALANCE ||
+                    buttonState === ButtonText.REACHED_LIMIT ||
+                    buttonState.startsWith('Min position size is') ||
+                    buttonState === ButtonText.ENTER_AMOUNT
+                  }
+                  onClick={async () => {
+                    if (buttonState === 'Connect Wallet') {
+                      setWalletDialogVisibility(true)
+                    } else {
+                      await handleButtonClick()
+                    }
+                  }}
+                >
+                  <Trans>{buttonState}</Trans>
+                </KravShortButton>
+              )}
             </div>
             <div
               css={css`
@@ -1012,47 +1050,6 @@ export const OrderParamsCard = ({
             {/*    </div>*/}
             {/*  </div>*/}
             {/*)}*/}
-            {!account && (
-              <KRAVButton onClick={async () => setWalletDialogVisibility(true)}>{ButtonText.CONNECT_WALLET}</KRAVButton>
-            )}
-            {account && isBuy && (
-              <KravLongButton
-                disabled={
-                  buttonState === ButtonText.INSUFFICIENT_BALANCE ||
-                  buttonState === ButtonText.REACHED_LIMIT ||
-                  buttonState === ButtonText.MIN_SIZE ||
-                  buttonState === ButtonText.ENTER_AMOUNT
-                }
-                onClick={async () => {
-                  if (buttonState === 'Connect Wallet') {
-                    setWalletDialogVisibility(true)
-                  } else {
-                    await handleButtonClick()
-                  }
-                }}
-              >
-                <Trans>{buttonState}</Trans>
-              </KravLongButton>
-            )}
-            {account && !isBuy && (
-              <KravShortButton
-                disabled={
-                  buttonState === ButtonText.INSUFFICIENT_BALANCE ||
-                  buttonState === ButtonText.REACHED_LIMIT ||
-                  buttonState === ButtonText.MIN_SIZE ||
-                  buttonState === ButtonText.ENTER_AMOUNT
-                }
-                onClick={async () => {
-                  if (buttonState === 'Connect Wallet') {
-                    setWalletDialogVisibility(true)
-                  } else {
-                    await handleButtonClick()
-                  }
-                }}
-              >
-                <Trans>{buttonState}</Trans>
-              </KravShortButton>
-            )}
           </>
         </div>
       )}

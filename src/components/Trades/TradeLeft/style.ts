@@ -3,7 +3,7 @@ import { css } from '@emotion/react'
 export const myTrade = css`
   margin-top: 18px;
   background: #fff;
-  border-radius: 8px;
+  border-radius: 16px;
   min-height: 371px;
   @media screen and (max-width: 1200px) {
     min-height: 170px;

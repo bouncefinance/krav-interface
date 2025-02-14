@@ -9,7 +9,7 @@ import BigNumber from 'bignumber.js'
 import { useRootStore } from '../../store/root'
 import { css, useMediaQuery, useTheme } from '@mui/material'
 // import { SecondChart } from './TradeLeft/SecondChart'
-import { TradeMode } from '../../store/TradeSlice'
+// import { TradeMode } from '../../store/TradeSlice'
 import KRAVButton from '../KravUIKit/KravButton'
 import { OrderParamsMobile } from '../Dialog/OrderParamsMobile'
 import { useWeb3React } from '@web3-react/core'
@@ -68,7 +68,6 @@ export const TradeLeft = ({
   const theme = useTheme()
   const { account } = useWeb3React()
   const isMobile = useMediaQuery(theme.breakpoints.down('lg'))
-  console.log('tradeModel === TradeMode.PRO', tradeModel === TradeMode.PRO)
 
   return (
     <>

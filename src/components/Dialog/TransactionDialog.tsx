@@ -5,12 +5,12 @@ import CloseSharpIcon from '@mui/icons-material/CloseSharp'
 import { useRootStore } from '../../store/root'
 import { css } from '@emotion/react'
 import { TransactionState } from '../../store/TransactionSlice'
-import { ReactComponent as PendingIcon } from '../../assets/imgs/pending_icon.svg'
-import { ReactComponent as ApproveIcon } from '../../assets/imgs/approve_icon.svg'
-import { ReactComponent as InteractionIcon } from '../../assets/imgs/interaction_logo.svg'
-import { ReactComponent as PendingDarkIcon } from '../../assets/imgs/darkModel/pending_icon_dark.svg'
-import { ReactComponent as ApproveDarkIcon } from '../../assets/imgs/darkModel/approve_icon_dark.svg'
-import { ReactComponent as InteractionDarkIcon } from '../../assets/imgs/darkModel/interaction_logo_dark.svg'
+// import { ReactComponent as PendingIcon } from '../../assets/imgs/pending_icon.svg'
+// import { ReactComponent as ApproveIcon } from '../../assets/imgs/approve_icon.svg'
+// import { ReactComponent as InteractionIcon } from '../../assets/imgs/interaction_logo.svg'
+// import { ReactComponent as PendingDarkIcon } from '../../assets/imgs/darkModel/pending_icon_dark.svg'
+// import { ReactComponent as ApproveDarkIcon } from '../../assets/imgs/darkModel/approve_icon_dark.svg'
+// import { ReactComponent as InteractionDarkIcon } from '../../assets/imgs/darkModel/interaction_logo_dark.svg'
 import KRAVButton from '../KravUIKit/KravButton'
 
 export const TransactionDialog = () => {
@@ -71,11 +71,11 @@ export const TransactionDialog = () => {
               >
                 Please manually interact with your wallet. Please enable Bounce Quanto to access your tokens.
               </p>
-              {theme.palette.mode === 'dark' ? (
-                <ApproveDarkIcon className="flash" />
-              ) : (
-                <ApproveIcon className="flash" />
-              )}
+              {/*{theme.palette.mode === 'dark' ? (*/}
+              {/*  <ApproveDarkIcon className="flash" />*/}
+              {/*) : (*/}
+              {/*  <ApproveIcon className="flash" />*/}
+              {/*)}*/}
 
               <KRAVButton disabled={true}>Awaiting...</KRAVButton>
             </div>
@@ -121,11 +121,11 @@ export const TransactionDialog = () => {
               >
                 Please open your wallet and confirm in the transaction activity to proceed your order.
               </p>
-              {theme.palette.mode === 'dark' ? (
-                <InteractionDarkIcon className="flash" />
-              ) : (
-                <InteractionIcon className="flash" />
-              )}
+              {/*{theme.palette.mode === 'dark' ? (*/}
+              {/*  <InteractionDarkIcon className="flash" />*/}
+              {/*) : (*/}
+              {/*  <InteractionIcon className="flash" />*/}
+              {/*)}*/}
 
               <KRAVButton disabled={true}>Awaiting...</KRAVButton>
             </div>
@@ -167,11 +167,11 @@ export const TransactionDialog = () => {
                 Bounce Quanto is engaging with blockchain transaction, please wait patiently for on-chain transaction
                 settlement.
               </p>
-              {theme.palette.mode === 'dark' ? (
-                <PendingDarkIcon className="flash" />
-              ) : (
-                <PendingIcon className="flash" />
-              )}
+              {/*{theme.palette.mode === 'dark' ? (*/}
+              {/*  <PendingDarkIcon className="flash" />*/}
+              {/*) : (*/}
+              {/*  <PendingIcon className="flash" />*/}
+              {/*)}*/}
 
               <KRAVButton disabled={true}>Awaiting...</KRAVButton>
             </div>

@@ -10,7 +10,7 @@ export const lightTheme = createTheme({
     mode: 'light',
   },
   button: {
-    defaultBg: '#000',
+    defaultBg: '#978365',
     hoverBg: '#757575',
     activeBg: '#6ed394',
     disableBg: '#dadada',
