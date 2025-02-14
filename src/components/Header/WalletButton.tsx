@@ -3,8 +3,6 @@ import { align } from '../../globalStyle'
 import { NetWorkButton } from './NetworkButton'
 import KRAVButton from '../KravUIKit/KravButton'
 import { headerBtn, setting } from './sytle'
-import { css } from '@emotion/react'
-import { ReactComponent as AccountIcon } from '../../assets/imgs/account_logo.svg'
 import { Menu, useMediaQuery, useTheme } from '@mui/material'
 import { SettingMenuContent } from './SettingMenuContent'
 import { Trans } from '@lingui/macro'
@@ -108,7 +106,7 @@ export const WalletButton = ({
             sx={{
               width: 'auto',
               mx: '9px',
-              borderRadius: '4px',
+              borderRadius: '200px',
               textTransform: 'none',
               display: 'flex',
               alignItems: 'center',
@@ -120,20 +118,6 @@ export const WalletButton = ({
             aria-expanded={settingOpen ? 'true' : undefined}
             onClick={handleSettingClick}
           >
-            <div
-              css={css`
-                border-radius: 50%;
-                background: white;
-                height: 24px;
-                width: 24px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-right: 8px;
-              `}
-            >
-              <AccountIcon />
-            </div>
             {account.substr(0, 4)}
             ...
             {account.substr(account.length - 2, 2)}
@@ -172,7 +156,7 @@ export const WalletButton = ({
         <KRAVButton
           sx={{
             mx: '9px',
-            borderRadius: '4px',
+            borderRadius: '200px',
             textTransform: 'none',
           }}
           css={headerBtn}

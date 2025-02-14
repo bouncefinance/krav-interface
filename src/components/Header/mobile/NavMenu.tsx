@@ -1,7 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import { SwipeableDrawer, useTheme } from '@mui/material'
-import { ReactComponent as BounceDarkLogo } from '../../../assets/imgs/bounce/logo-white.svg'
-import { ReactComponent as BounceLogo } from '../../../assets/imgs/bounce/logo.svg'
+// import { ReactComponent as BounceDarkLogo } from '../../../assets/imgs/bounce/logo-white.svg'
+// import { ReactComponent as BounceLogo } from '../../../assets/imgs/bounce/logo.svg'
+import { ReactComponent as DogLogo } from '../../../assets/imgs/bounce/dog.svg'
 import { NavLink } from 'react-router-dom'
 import CloseSharpIcon from '@mui/icons-material/CloseSharp'
 import { css } from '@emotion/react'
@@ -44,13 +45,27 @@ export const NavMenu = ({ isOpen, setIsOpen }: NavMenuProps) => {
           margin-bottom: 24px;
         `}
       >
-        <NavLink style={{ height: '22px' }} to={'/trade'}>
-          {theme.palette.mode === 'dark' ? (
-            <BounceDarkLogo height="22" width="91" />
-          ) : (
-            <BounceLogo height="22" width="91" />
-          )}
-        </NavLink>
+        <div
+          css={css`
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          `}
+        >
+          <NavLink style={{ height: '22px' }} to={'/trade'}>
+            {theme.palette.mode === 'dark' ? <DogLogo height="22" width="22" /> : <DogLogo height="22" width="22" />}
+          </NavLink>
+          <span
+            css={css`
+              font-weight: 600;
+              color: #000;
+              margin-left: 8px;
+              size: 16px;
+            `}
+          >
+            Broccoli
+          </span>
+        </div>
         <CloseSharpIcon sx={{ cursor: 'pointer' }} onClick={setIsOpen} />
       </div>
       <div

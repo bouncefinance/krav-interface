@@ -65,12 +65,13 @@ export const NetWorkButton = () => {
         css={headerBtn}
         sx={{
           color: '#000',
-          borderRadius: '4px',
-          border: theme.palette.mode === 'dark' ? '1px solid #4B4B4B' : '1px solid #DADADA',
+          borderRadius: '200px',
           textTransform: 'none',
           minWidth: '60px',
+          backgroundColor: '#E1F25C',
           '&:hover': {
-            backgroundColor: theme.palette.mode === 'dark' ? '#4B4B4B' : '#DADADA',
+            backgroundColor: '#E1F25C',
+            opacity: 0.8,
           },
         }}
         endIcon={

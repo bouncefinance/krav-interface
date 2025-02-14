@@ -3,7 +3,7 @@ import { css, Tab, Tabs, useMediaQuery, useTheme } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { Positions } from './Positions'
 import { Orders } from './Orders'
-import { HistoryData, TradeHistory } from './TradeHistory'
+// import { HistoryData, TradeHistory } from './TradeHistory'
 import { myTrade } from './style'
 import { useRootStore } from '../../../store/root'
 import { useGetUserOpenTrade } from '../../../hook/hookV8/useGetUserOpenTrade'
@@ -16,7 +16,7 @@ export const MyTrade = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('lg'))
   const [infoType, setInfoType] = useState(0)
   const { provider, account, chainId } = useWeb3React()
-  const [historyList, setHistoryList] = useState<HistoryData[]>([])
+  // const [historyList, setHistoryList] = useState<HistoryData[]>([])
   const userOpenTradeList = useRootStore((state) => state.userOpenTradeList)
   const userOpenLimitList = useRootStore((state) => state.userOpenLimitList)
   const tradePool = useRootStore((store) => store.tradePool)
@@ -51,7 +51,7 @@ export const MyTrade = () => {
       css={[
         myTrade,
         css`
-          background: ${theme.background.primary};
+          background: #00000080;
           overflow: ${isMobile ? 'auto' : ''};
           &::-webkit-scrollbar {
             display: none
@@ -69,10 +69,10 @@ export const MyTrade = () => {
           onChange={handleChange}
           sx={{
             '& .MuiTabs-indicator': {
-              backgroundColor: '#000',
+              backgroundColor: '#fff',
             },
             '& .Mui-selected': {
-              color: '#000000!important',
+              color: '#fff!important',
             },
           }}
         >
@@ -81,10 +81,10 @@ export const MyTrade = () => {
               minWidth: 0,
               fontFamily: 'Inter',
               padding: '20px 0 8px 0',
-              color: '#757575',
+              color: '#FFFFFF99',
               mr: '16px',
               '& .MuiTab-root': {
-                color: '#757575',
+                color: '#FFFFFF99',
               },
             }}
             label={`Positions ${userOpenTradeList.length > 0 ? '(' + userOpenTradeList.length + ')' : ''}`}
@@ -95,31 +95,31 @@ export const MyTrade = () => {
               mr: '16px',
               fontFamily: 'Inter',
               padding: '20px 0 8px 0',
-              color: '#757575',
+              color: '#FFFFFF99',
               '& .MuiTab-root': {
-                color: '#757575',
+                color: '#FFFFFF99',
               },
             }}
             label={`Orders ${userOpenLimitList.length > 0 ? '(' + userOpenLimitList.length + ')' : ''}`}
           />
-          <Tab
+          {/* <Tab
             sx={{
               minWidth: 0,
               fontFamily: 'Inter',
               padding: '20px 0 8px 0',
-              color: '#757575',
+              color: '#FFFFFF99',
               '& .MuiTab-root': {
-                color: '#757575',
+                color: '#FFFFFF99',
               },
             }}
             label="Trades"
-          />
+          /> */}
         </Tabs>
       </div>
       <>
         {infoType === 0 && <Positions />}
         {infoType === 1 && <Orders />}
-        {infoType === 2 && <TradeHistory historyList={historyList} setHistoryList={setHistoryList} />}
+        {/* {infoType === 2 && <TradeHistory historyList={historyList} setHistoryList={setHistoryList} />} */}
       </>
     </div>
   )

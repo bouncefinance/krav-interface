@@ -22,7 +22,7 @@ export const useConnect = () => {
         setExpectChainId(chainId)
         setIsLoadingFactory(true)
         setAllPoolParams([] as PoolParams[])
-        setTradePairIndex(0)
+        setTradePairIndex(2)
         setTradePool({} as PoolParams)
       } catch (e: any) {
         try {
@@ -31,7 +31,7 @@ export const useConnect = () => {
           setExpectChainId(chainId)
           setIsLoadingFactory(true)
           setAllPoolParams([] as PoolParams[])
-          setTradePairIndex(0)
+          setTradePairIndex(2)
           setTradePool({} as PoolParams)
         } catch (e) {
           updateError(TransactionAction.WALLET)

@@ -1,18 +1,18 @@
 /** @jsxImportSource @emotion/react */
-import { Box, useMediaQuery, useTheme } from '@mui/material'
-import { Trans } from '@lingui/macro'
-import { header, router, UnSupport } from './sytle'
+import { useMediaQuery, useTheme } from '@mui/material'
+import { header, UnSupport } from './sytle'
 import { align } from '../../globalStyle'
-import { ReactComponent as BounceDarkLogo } from '../../assets/imgs/bounce/logo-white.svg'
-import { ReactComponent as BounceLogo } from '../../assets/imgs/bounce/logo.svg'
+import { ReactComponent as DogLogo } from '../../assets/imgs/bounce/dog.svg'
+// import { ReactComponent as BounceDarkLogo } from '../../assets/imgs/bounce/logo-white.svg'
+// import { ReactComponent as BounceLogo } from '../../assets/imgs/bounce/logo.svg'
 // import { ReactComponent as KravLogo } from '../../assets/imgs/tokens/karv_icon.svg'
 // import { ReactComponent as KravDarkLogo } from '../../assets/imgs/tokens/karv_icon_dark.svg'
 import { css } from '@emotion/react'
 import { ConnectWalletDialog } from '../../components/Dialog/ConnectWallet'
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { useWeb3React } from '@web3-react/core'
 import { useRootStore } from '../../store/root'
-import { NavLink, useLocation } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import BigNumber from 'bignumber.js'
 import { eXDecimals } from '../../utils/math'
 import { useSetThemeContext } from '../../theme/appTheme'
@@ -24,6 +24,7 @@ import { getAddChainParameters } from '../../connectors/chain'
 import { DEFAULT_CHAIN, SUPPORT_CHAIN } from '../../constant/chain'
 import { FaucetDialog } from '../Dialog/FaucetDialog'
 import { useFactory } from '../../hook/hookV8/useFactory'
+import { MenuSelector } from './MenuSelector'
 
 export const Header = () => {
   const setWalletDialogVisibility = useRootStore((store) => store.setWalletDialogVisibility)
@@ -39,38 +40,15 @@ export const Header = () => {
   const setDisconnectWallet = useRootStore((store) => store.setDisconnectWallet)
   const expectChainId = useRootStore((store) => store.expectChainId)
   const isLoadingFactory = useRootStore((store) => store.isLoadingFactory)
-
-  const { pathname } = useLocation()
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('lg'))
 
   const toggleTheme = useSetThemeContext()
 
-  const routerActive = useMemo(() => {
-    return css`
-      background: ${theme.palette.mode === 'dark' ? '#4b4b4b' : '#F5F4F3'};
-      color: #000000;
-      //box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    `
-  }, [theme])
-
-  const routerColor = useMemo(() => {
-    return css`
-      color: rgba(33, 32, 28, 0.4);
-      :hover {
-        color: #000000;
-      },
-    `
-  }, [theme])
-
   // const isHomePath = useMemo(() => {
   //   const pathList = ['/portfolio', '/portfolio/stake', '/portfolio/farm', '/portfolio/referral', '/portfolio/reward']
   //   return pathList.includes(pathname)
   // }, [pathname])
-
-  const isTradePath = useMemo(() => {
-    return pathname.includes('/trade')
-  }, [pathname])
 
   useEffect(() => {
     setTimeout(async () => {
@@ -115,7 +93,7 @@ export const Header = () => {
         css={[
           header,
           css`
-            background: ${theme.background.fourth};
+            background: #000;
             z-index: 1;
             position: relative;
           `,
@@ -131,13 +109,23 @@ export const Header = () => {
                 `,
               ]}
             >
-              <NavLink style={{ height: '29px' }} to={'/trade'}>
+              <NavLink style={{ height: '32px' }} to={'/trade'}>
                 {theme.palette.mode === 'dark' ? (
-                  <BounceDarkLogo height="29" width="139" />
+                  <DogLogo height="32" width="32" />
                 ) : (
-                  <BounceLogo height="29" width="139" />
+                  <DogLogo height="32" width="32" />
                 )}
               </NavLink>
+              <span
+                css={css`
+                  font-weight: 600;
+                  color: #fff;
+                  margin-left: 8px;
+                  size: 22px;
+                `}
+              >
+                Broccoli
+              </span>
             </div>
             {/*<div>*/}
             {/*  <Link underline="none" href="https://app.krav.trade" target="_blank">*/}
@@ -158,7 +146,7 @@ export const Header = () => {
             height: 100%;
           `}
         >
-          {!isMobile && (
+          {/* {!isMobile && (
             <Box
               sx={{
                 height: '100%',
@@ -182,15 +170,16 @@ export const Header = () => {
                 <Trans>Liquidity</Trans>
               </NavLink>
               {/*<NavLink to={'/portfolio'} css={[router, routerColor, isHomePath ? routerActive : '']}>*/}
-              {/*  <Trans>Portfolio</Trans>*/}
-              {/*</NavLink>*/}
-              {/*<NavLink to={'/statistics'} css={[router, routerColor, pathname === '/statistics' ? routerActive : '']}>*/}
-              {/*  <Trans>Statistics</Trans>*/}
-              {/*</NavLink>*/}
-            </Box>
-          )}
+          {/*  <Trans>Portfolio</Trans>*/}
+          {/*</NavLink>*/}
+          {/*<NavLink to={'/statistics'} css={[router, routerColor, pathname === '/statistics' ? routerActive : '']}>*/}
+          {/*  <Trans>Statistics</Trans>*/}
+          {/*</NavLink>*/}
+          {/* </Box> */}
+          {/* )} */}
         </div>
         <div css={align}>
+          {!isMobile && <MenuSelector />}
           <WalletButton
             chainId={chainId}
             connector={connector}
@@ -199,7 +188,9 @@ export const Header = () => {
             account={account}
             setOpenFaucet={() => setOpenFa(true)}
           />
-          {isMobile && <DehazeIcon onClick={() => setOpenMobileNav(true)} height="24" width="24" />}
+          {isMobile && (
+            <DehazeIcon onClick={() => setOpenMobileNav(true)} height="24" width="24" style={{ color: '#fff' }} />
+          )}
         </div>
         <ConnectWalletDialog
           walletDialogVisibility={walletDialogVisibility}
