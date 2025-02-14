@@ -3,7 +3,7 @@ import { css, Tab, Tabs, useMediaQuery, useTheme } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { Positions } from './Positions'
 import { Orders } from './Orders'
-import { HistoryData, TradeHistory } from './TradeHistory'
+// import { HistoryData, TradeHistory } from './TradeHistory'
 import { myTrade } from './style'
 import { useRootStore } from '../../../store/root'
 import { useGetUserOpenTrade } from '../../../hook/hookV8/useGetUserOpenTrade'
@@ -16,7 +16,7 @@ export const MyTrade = () => {
   const isMobile = useMediaQuery(theme.breakpoints.down('lg'))
   const [infoType, setInfoType] = useState(0)
   const { provider, account, chainId } = useWeb3React()
-  const [historyList, setHistoryList] = useState<HistoryData[]>([])
+  // const [historyList, setHistoryList] = useState<HistoryData[]>([])
   const userOpenTradeList = useRootStore((state) => state.userOpenTradeList)
   const userOpenLimitList = useRootStore((state) => state.userOpenLimitList)
   const tradePool = useRootStore((store) => store.tradePool)
@@ -102,7 +102,7 @@ export const MyTrade = () => {
             }}
             label={`Orders ${userOpenLimitList.length > 0 ? '(' + userOpenLimitList.length + ')' : ''}`}
           />
-          <Tab
+          {/* <Tab
             sx={{
               minWidth: 0,
               fontFamily: 'Inter',
@@ -113,13 +113,13 @@ export const MyTrade = () => {
               },
             }}
             label="Trades"
-          />
+          /> */}
         </Tabs>
       </div>
       <>
         {infoType === 0 && <Positions />}
         {infoType === 1 && <Orders />}
-        {infoType === 2 && <TradeHistory historyList={historyList} setHistoryList={setHistoryList} />}
+        {/* {infoType === 2 && <TradeHistory historyList={historyList} setHistoryList={setHistoryList} />} */}
       </>
     </div>
   )

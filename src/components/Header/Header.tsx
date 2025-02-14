@@ -179,7 +179,7 @@ export const Header = () => {
           {/* )} */}
         </div>
         <div css={align}>
-          <MenuSelector />
+          {!isMobile && <MenuSelector />}
           <WalletButton
             chainId={chainId}
             connector={connector}
@@ -188,7 +188,9 @@ export const Header = () => {
             account={account}
             setOpenFaucet={() => setOpenFa(true)}
           />
-          {isMobile && <DehazeIcon onClick={() => setOpenMobileNav(true)} height="24" width="24" />}
+          {isMobile && (
+            <DehazeIcon onClick={() => setOpenMobileNav(true)} height="24" width="24" style={{ color: '#fff' }} />
+          )}
         </div>
         <ConnectWalletDialog
           walletDialogVisibility={walletDialogVisibility}
