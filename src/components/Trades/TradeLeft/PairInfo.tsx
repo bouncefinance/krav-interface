@@ -104,7 +104,7 @@ export const PairInfo = ({ setIsOpenSelectToken, setTradeModel, tradeModel }: Pa
           pairInfo,
           card,
           css`
-            background: ${theme.background.primary};
+            background: rgba(0, 0, 0, 0.5);
             position: relative;
             @media screen and (max-width: 1500px) {
               overflow: auto;
@@ -139,16 +139,28 @@ export const PairInfo = ({ setIsOpenSelectToken, setTradeModel, tradeModel }: Pa
             css={css`
               display: flex;
               align-items: center;
+              gap: 32px;
             `}
           >
             <div
               css={[
-                align,
                 css`
+                  color: #fff;
+                  leading-trim: both;
+                  text-edge: cap;
+                  font-variant-numeric: lining-nums proportional-nums;
+                  font-family: 'Work Sans';
+                  font-size: 16px;
+                  font-style: normal;
+                  font-weight: 400;
+                  line-height: 140%; /* 22.4px */
                   padding-right: 16px;
                 `,
               ]}
             >
+              Market
+            </div>
+            <div css={[align]}>
               <div
                 css={css`
                   display: flex;
@@ -248,15 +260,20 @@ export const PairInfo = ({ setIsOpenSelectToken, setTradeModel, tradeModel }: Pa
                 ]}
               >
                 <img src={tradePair.logoSource.default} height={'24'} width={'24'} alt={''} />
-                {/*<div*/}
-                {/*  className="symbol"*/}
-                {/*  css={css`*/}
-                {/*    display: flex;*/}
-                {/*    align-items: center;*/}
-                {/*  `}*/}
-                {/*>*/}
-                {/*  {tradePair.titleSymbol}*/}
-                {/*</div>*/}
+                <div
+                  css={css`
+                    display: flex;
+                    align-items: center;
+                    margin-left: 8px;
+                    color: #fff;
+                    font-family: 'Work Sans';
+                    font-size: 22px;
+                    font-weight: 600;
+                    line-height: 130%;
+                  `}
+                >
+                  {tradePair.titleSymbol}
+                </div>
                 <div
                   onClick={() => {
                     if (showSwitch) {
@@ -266,17 +283,19 @@ export const PairInfo = ({ setIsOpenSelectToken, setTradeModel, tradeModel }: Pa
                   css={css`
                     display: flex;
                     align-items: center;
-                    margin-left: 8px;
+                    margin-left: 16px;
                   `}
                 >
                   <span
                     css={css`
                       color: ${isBTCRise ? '#009b72' : '#db4c40'};
-                      font-size: 20px;
-                      line-height: 1.4;
+                      font-size: 22px;
+                      font-weight: 600;
+                      line-height: 1.3;
+                      font-family: 'Work Sans';
                     `}
                   >
-                    {BTCPrice.toFixed(tradePair.fixDecimals)}
+                    ${BTCPrice.toFixed(tradePair.fixDecimals)}
                   </span>
                   {showSwitch && (
                     <div
@@ -290,7 +309,7 @@ export const PairInfo = ({ setIsOpenSelectToken, setTradeModel, tradeModel }: Pa
                         margin-left: 8px;
                       `}
                     >
-                      <KeyboardArrowDownIcon sx={{ color: '#000', height: '24px', width: '24px' }} />
+                      <KeyboardArrowDownIcon sx={{ color: '#fff', height: '24px', width: '24px' }} />
                     </div>
                   )}
                 </div>
@@ -344,15 +363,11 @@ export const PairInfo = ({ setIsOpenSelectToken, setTradeModel, tradeModel }: Pa
                     color: ${openDaiShort && openDaiLong?.gt(openDaiShort)
                       ? '#009b72'
                       : openDaiLong?.toString() === openDaiShort?.toString()
-                      ? '#000'
+                      ? '#fff'
                       : '#db4c40'};
                   `}
                 >
-                  <span
-                    css={css`
-                      color: ${theme.text.primary};
-                    `}
-                  >
+                  <span>
                     {openDaiShort && openDaiLong?.gt(openDaiShort)
                       ? ''
                       : openDaiLong?.toString() === openDaiShort?.toString()
@@ -371,15 +386,11 @@ export const PairInfo = ({ setIsOpenSelectToken, setTradeModel, tradeModel }: Pa
                     color: ${openDaiShort && openDaiLong?.gt(openDaiShort)
                       ? '#db4c40'
                       : openDaiLong?.toString() === openDaiShort?.toString()
-                      ? '#000'
+                      ? '#fff'
                       : '#009b72'};
                   `}
                 >
-                  <span
-                    css={css`
-                      color: ${theme.text.primary};
-                    `}
-                  >
+                  <span>
                     {openDaiShort && openDaiLong?.lt(openDaiShort)
                       ? ''
                       : openDaiLong?.toString() === openDaiShort?.toString()
@@ -395,7 +406,7 @@ export const PairInfo = ({ setIsOpenSelectToken, setTradeModel, tradeModel }: Pa
             css={css`
               display: flex;
               align-items: center;
-              background: ${theme.palette.mode === 'dark' ? '#0f1114' : '#f6f7f9'};
+              background: ${theme.palette.mode === 'dark' ? '#0f1114' : '#0f1114'};
               padding: 4px;
               border-radius: 8px;
             `}
@@ -418,7 +429,7 @@ export const PairInfo = ({ setIsOpenSelectToken, setTradeModel, tradeModel }: Pa
                 background: ${tradeModel === TradeMode.PRO
                   ? 'linear-gradient(180deg, #84ff9f 0%, #ffe071 49.53%, #f96262 96.35%)'
                   : 'transparent'};
-                color: ${tradeModel === TradeMode.PRO ? '#000' : theme.text.primary};
+                color: ${tradeModel === TradeMode.PRO ? '#000' : '#fff'};
               `}
               onClick={() => setTradeModel(TradeMode.PRO)}
             >
@@ -442,7 +453,7 @@ export const PairInfo = ({ setIsOpenSelectToken, setTradeModel, tradeModel }: Pa
                 background: ${tradeModel === TradeMode.DEGEN
                   ? 'linear-gradient(180deg, #84ff9f 0%, #ffe071 49.53%, #f96262 96.35%)'
                   : 'transparent'};
-                color: ${tradeModel === TradeMode.DEGEN ? '#000' : theme.text.primary};
+                color: ${tradeModel === TradeMode.DEGEN ? '#000' : '#fff'};
               `}
               onClick={() => setTradeModel(TradeMode.DEGEN)}
             >

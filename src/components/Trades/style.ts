@@ -31,9 +31,17 @@ export const pairInfo = css`
     padding: 0 24px;
     color: #757575;
     font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     > p {
+      color: #fff;
+      font-family: 'Work Sans';
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 130%; /* 15.6px */
       white-space: nowrap;
-      margin: 0 0 5px 0;
     }
   }
   .symbol {
