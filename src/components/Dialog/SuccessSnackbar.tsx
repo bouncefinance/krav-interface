@@ -37,8 +37,11 @@ export const SuccessSnackbar = () => {
             css={[
               snackbar,
               css`
-                background: ${theme.background.primary};
-                color: ${theme.text.primary};
+                // background: ${theme.background.primary};
+                // color: ${theme.text.primary};
+                background: rgba(0, 0, 0, 0.5);
+                backdrop-filter: blur(2px);
+                color: #ffffff;
               `,
             ]}
           >

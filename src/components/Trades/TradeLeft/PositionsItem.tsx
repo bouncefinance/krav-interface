@@ -131,7 +131,13 @@ export const PositionsItem = ({ openTrade, index, pool }: PositionsItemProps) =>
                   `}
                   className="loading"
                 />
-                <span>closing...</span>
+                <span
+                  css={css`
+                    color: #fff;
+                  `}
+                >
+                  closing...
+                </span>
               </div>
             )}
             {!openTrade.beingMarketClosed && (
@@ -199,7 +205,13 @@ export const PositionsItem = ({ openTrade, index, pool }: PositionsItemProps) =>
                 `}
                 className="loading"
               />
-              <span>opening...</span>
+              <span
+                css={css`
+                  color: #fff;
+                `}
+              >
+                opening...
+              </span>
             </div>
           )}
           {!openTrade?.isInPending && (

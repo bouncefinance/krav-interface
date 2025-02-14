@@ -40,7 +40,9 @@ export const TransactionDialog = () => {
             css={[
               errorDialog,
               css`
-                background: ${theme.background.primary};
+                // background: ${theme.background.primary};
+                background: rgba(0, 0, 0, 0.5);
+                backdrop-filter: blur(2px);
               `,
             ]}
           >
@@ -91,9 +93,9 @@ export const TransactionDialog = () => {
           <div
             css={[
               errorDialog,
-              css`
-                background: ${theme.background.primary};
-              `,
+              // css`
+              //   background: ${theme.background.primary};
+              // `,
             ]}
           >
             <div
@@ -143,9 +145,9 @@ export const TransactionDialog = () => {
           <div
             css={[
               errorDialog,
-              css`
-                background: ${theme.background.primary};
-              `,
+              // css`
+              //   background: ${theme.background.primary};
+              // `,
             ]}
           >
             <div
