@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useRef } from 'react'
 import BigNumber from 'bignumber.js'
 import { useRootStore } from '../../store/root'
-import { BTC_PRICE_API } from '../../constant/chain'
+// import { BTC_PRICE_API } from '../../constant/chain'
 import { useWeb3React } from '@web3-react/core'
+import { ApiInstance } from './utils/fetch'
 
 //TODO: match price with pair index
 export const useBTCPrice = () => {
@@ -18,9 +19,15 @@ export const useBTCPrice = () => {
 
   const getPrice = useCallback(async () => {
     try {
-      const req = await fetch(BTC_PRICE_API + pairConfig[tradePairIndex].apiSymbol)
-      const price = await req.json()
-      const res = new BigNumber(price.data.lastPrice)
+      const req = await ApiInstance.postForward('index/stock', {
+        url: 'crypto/quote?region=ba&code=' + pairConfig[tradePairIndex].apiSymbol,
+        method: 'GET',
+        headerName: 'Club_Quanto_Itick',
+        accept: 'application/json',
+        cacheSecond: 10,
+        body: '',
+      })
+      const res = new BigNumber(req?.data?.ld)
       if (res.isGreaterThan(BTCPrice)) setIsBTCRise(true)
       else setIsBTCRise(false)
       setBTCPrice(res)
