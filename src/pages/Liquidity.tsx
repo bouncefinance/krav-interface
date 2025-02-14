@@ -54,7 +54,7 @@ export const Liquidity = () => {
             display: flex;
             padding: 16px 32px 12px 32px;
             align-items: flex-start;
-            background: ${theme.background.primary};
+            background: #00000080;
             margin-bottom: 12px;
             border-radius: 8px;
           `}

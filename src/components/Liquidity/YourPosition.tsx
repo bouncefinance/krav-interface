@@ -33,13 +33,14 @@ export const YourPosition = ({
     <div
       className="liquidity-content"
       css={css`
-        background: ${theme.background.primary};
+        background: #00000080;
         color: ${theme.text.primary};
       `}
     >
       <div
         className="liquidity-tabs"
         css={css`
+          color: #fff;
           border-bottom: ${theme.splitLine.primary};
           @media screen and (max-width: 1200px) {
             min-width: 1200px;
