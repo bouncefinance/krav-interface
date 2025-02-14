@@ -76,7 +76,7 @@ const FullApp = () => {
           background: url(${DashboardBg});
           background-repeat: no-repeat;
           background-size: cover;
-          background-position: center center;
+          // background-position: center center;
         `}
       >
         <div
