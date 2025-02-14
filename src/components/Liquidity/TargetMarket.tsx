@@ -7,9 +7,9 @@ import { useRootStore } from '../../store/root'
 // import { useWeb3React } from '@web3-react/core'
 import { MarketSkeleton } from './MarketSkeleton'
 import { Stack, Typography, useTheme } from '@mui/material'
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
-import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp'
-import { useCallback, useMemo, useState } from 'react'
+// import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
+// import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp'
+import { useMemo } from 'react'
 import { css } from '@emotion/react'
 import { MarketItemCard } from './MarketItemCard'
 import { MarketItem } from './MarketItem'
@@ -19,10 +19,10 @@ export const TargetMarket = ({ setCreateLiquidityPool, setAddLiquidity, aprList,
   const allPoolParams = useRootStore((store) => store.allPoolParams)
   const isLoadingFactory = useRootStore((store) => store.isLoadingFactory)
   // const { account } = useWeb3React()
-  const [aprSortBy, setAprSortBy] = useState<'asc' | 'desc'>('asc')
-  const [totalSortBy, setTotalSortBy] = useState<'asc' | 'desc'>('asc')
-  const [aprAsc, setAprAsc] = useState<boolean>(false)
-  const [totalAsc, setTotalAsc] = useState<boolean>(false)
+  // const [aprSortBy, setAprSortBy] = useState<'asc' | 'desc'>('asc')
+  // const [totalSortBy, setTotalSortBy] = useState<'asc' | 'desc'>('asc')
+  // const [aprAsc, setAprAsc] = useState<boolean>(false)
+  // const [totalAsc, setTotalAsc] = useState<boolean>(false)
 
   const tableData = useMemo(() => {
     if (!aprList || !allPoolParams) return []
@@ -35,24 +35,24 @@ export const TargetMarket = ({ setCreateLiquidityPool, setAddLiquidity, aprList,
     return res
   }, [allPoolParams, aprList])
 
-  const reorderClick = useCallback(
-    (sort: 'asc' | 'desc', way: string) => {
-      if (way === 'apr') {
-        tableData.sort((a, b) => {
-          if (sort === 'asc') {
-            return Number(a.apr) - Number(b.apr)
-          } else return Number(b.apr) - Number(a.apr)
-        })
-      } else {
-        tableData.sort((a, b) => {
-          if (sort === 'asc') {
-            return Number(a.poolTotalSupply) - Number(b.poolTotalSupply)
-          } else return Number(b.poolTotalSupply) - Number(a.poolTotalSupply)
-        })
-      }
-    },
-    [tableData]
-  )
+  // const reorderClick = useCallback(
+  //   (sort: 'asc' | 'desc', way: string) => {
+  //     if (way === 'apr') {
+  //       tableData.sort((a, b) => {
+  //         if (sort === 'asc') {
+  //           return Number(a.apr) - Number(b.apr)
+  //         } else return Number(b.apr) - Number(a.apr)
+  //       })
+  //     } else {
+  //       tableData.sort((a, b) => {
+  //         if (sort === 'asc') {
+  //           return Number(a.poolTotalSupply) - Number(b.poolTotalSupply)
+  //         } else return Number(b.poolTotalSupply) - Number(a.poolTotalSupply)
+  //       })
+  //     }
+  //   },
+  //   [tableData]
+  // )
 
   return (
     <div
@@ -95,7 +95,7 @@ export const TargetMarket = ({ setCreateLiquidityPool, setAddLiquidity, aprList,
               <Typography fontFamily={'Inter'} fontSize={14} sx={{ marginRight: '4px', color: '#757575' }}>
                 APR
               </Typography>
-              <Stack
+              {/* <Stack
                 onClick={() => {
                   setAprSortBy(aprSortBy === 'asc' ? 'desc' : 'asc')
                   setAprAsc(!aprAsc)
@@ -147,14 +147,14 @@ export const TargetMarket = ({ setCreateLiquidityPool, setAddLiquidity, aprList,
                     },
                   }}
                 />
-              </Stack>
+              </Stack> */}
             </Stack>
             <div style={{ color: '#757575' }}>UTILIZATION</div>
             <Stack direction={'row'} alignItems={'center'}>
               <Typography fontFamily={'Inter'} fontSize={14} sx={{ marginRight: '4px', color: '#757575' }}>
                 TOTAL LIQUIDITY SUPPLY
               </Typography>
-              <Stack
+              {/* <Stack
                 onClick={() => {
                   setTotalSortBy(totalSortBy === 'asc' ? 'desc' : 'asc')
                   setTotalAsc(!totalAsc)
@@ -206,7 +206,7 @@ export const TargetMarket = ({ setCreateLiquidityPool, setAddLiquidity, aprList,
                     },
                   }}
                 />
-              </Stack>
+              </Stack> */}
             </Stack>
             <div style={{ color: '#757575' }}>YOUR LIQUIDITY SUPPLY</div>
             <div style={{ color: '#757575' }}>LP REWARD</div>

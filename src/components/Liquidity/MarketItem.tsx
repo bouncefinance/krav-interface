@@ -100,6 +100,7 @@ export const MarketItem = ({ setAddLiquidity, poolParams, aprList }: MarketItemP
         )}
         {!account && (
           <KRAVButton
+            style={{ width: 'auto', padding: '6px 8px' }}
             onClick={() => {
               setWalletDialogVisibility(true)
             }}
