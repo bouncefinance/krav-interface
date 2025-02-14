@@ -30,7 +30,7 @@ export const Orders = () => {
       <div
         className="order-layout"
         css={css`
-          color: #617168;
+          color: #fff;
           border-top: ${theme.splitLine.primary};
         `}
       >

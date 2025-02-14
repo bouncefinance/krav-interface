@@ -51,7 +51,7 @@ export const MyTrade = () => {
       css={[
         myTrade,
         css`
-          background: ${theme.background.primary};
+          background: #00000080;
           overflow: ${isMobile ? 'auto' : ''};
           &::-webkit-scrollbar {
             display: none
@@ -69,10 +69,10 @@ export const MyTrade = () => {
           onChange={handleChange}
           sx={{
             '& .MuiTabs-indicator': {
-              backgroundColor: '#000',
+              backgroundColor: '#fff',
             },
             '& .Mui-selected': {
-              color: '#000000!important',
+              color: '#fff!important',
             },
           }}
         >
@@ -81,10 +81,10 @@ export const MyTrade = () => {
               minWidth: 0,
               fontFamily: 'Inter',
               padding: '20px 0 8px 0',
-              color: '#757575',
+              color: '#FFFFFF99',
               mr: '16px',
               '& .MuiTab-root': {
-                color: '#757575',
+                color: '#FFFFFF99',
               },
             }}
             label={`Positions ${userOpenTradeList.length > 0 ? '(' + userOpenTradeList.length + ')' : ''}`}
@@ -95,9 +95,9 @@ export const MyTrade = () => {
               mr: '16px',
               fontFamily: 'Inter',
               padding: '20px 0 8px 0',
-              color: '#757575',
+              color: '#FFFFFF99',
               '& .MuiTab-root': {
-                color: '#757575',
+                color: '#FFFFFF99',
               },
             }}
             label={`Orders ${userOpenLimitList.length > 0 ? '(' + userOpenLimitList.length + ')' : ''}`}
@@ -107,9 +107,9 @@ export const MyTrade = () => {
               minWidth: 0,
               fontFamily: 'Inter',
               padding: '20px 0 8px 0',
-              color: '#757575',
+              color: '#FFFFFF99',
               '& .MuiTab-root': {
-                color: '#757575',
+                color: '#FFFFFF99',
               },
             }}
             label="Trades"

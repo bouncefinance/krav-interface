@@ -98,7 +98,7 @@ export const TradeHistory = ({ historyList, setHistoryList }: TradeHistoryProps)
       <div
         className="history-layout"
         css={css`
-          color: #617168;
+          color: #fff;
           border-top: ${theme.splitLine.primary};
         `}
       >

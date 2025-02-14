@@ -16,7 +16,7 @@ export const Positions = () => {
       <div
         className="position-layout"
         css={css`
-          color: #617168;
+          color: #fff;
           border-top: ${theme.splitLine.primary};
         `}
       >

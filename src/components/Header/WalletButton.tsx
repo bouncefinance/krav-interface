@@ -108,7 +108,7 @@ export const WalletButton = ({
             sx={{
               width: 'auto',
               mx: '9px',
-              borderRadius: '4px',
+              borderRadius: '200px',
               textTransform: 'none',
               display: 'flex',
               alignItems: 'center',
@@ -172,7 +172,7 @@ export const WalletButton = ({
         <KRAVButton
           sx={{
             mx: '9px',
-            borderRadius: '4px',
+            borderRadius: '200px',
             textTransform: 'none',
           }}
           css={headerBtn}

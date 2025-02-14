@@ -83,7 +83,7 @@ export const router = css`
   font-size: 16px;
   font-weight: 600;
   letter-spacing: -0.01em;
-  color: rgba(33, 32, 28, 0.4);
+  color: #000;
   cursor: pointer;
   font-family: 'Inter';
   text-decoration: none;
