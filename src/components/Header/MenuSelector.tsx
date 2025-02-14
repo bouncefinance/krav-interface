@@ -46,6 +46,8 @@ export const MenuSelector = () => {
 
   const itemPadding = useMemo(() => {
     return css`
+      height: 38px;
+      display: block;
       padding: 0 !important;
     `
   }, [])
@@ -86,7 +88,6 @@ export const MenuSelector = () => {
         sx={{
           '& .MuiPaper-root': {
             minWidth: 220,
-            height: '52px!important',
           },
         }}
         id="network-menu"
