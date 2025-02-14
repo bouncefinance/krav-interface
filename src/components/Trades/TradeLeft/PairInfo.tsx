@@ -108,7 +108,7 @@ export const PairInfo = ({ setIsOpenSelectToken, setTradeModel, tradeModel }: Pa
             background: rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(2px);
             position: relative;
-            @media screen and (max-width: 1500px) {
+            @media screen and (max-width: 1800px) {
               overflow: auto;
               &::-webkit-scrollbar {
                 width: 5px;
