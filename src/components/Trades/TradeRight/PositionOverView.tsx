@@ -12,8 +12,9 @@ export const PositionOverView = () => {
       css={[
         bottomCard,
         css`
-          background: ${theme.background.primary};
-          color: ${theme.text.primary};
+          background: rgba(0, 0, 0, 0.5);
+          backdrop-filter: blur(2px);
+          color: #fff;
         `,
       ]}
     >
@@ -26,7 +27,7 @@ export const PositionOverView = () => {
       </div>
       <div
         css={css`
-          padding-top: 12px;
+          padding: 12px 24px 16px;
         `}
       >
         <p className="card-details">

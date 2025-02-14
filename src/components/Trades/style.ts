@@ -81,20 +81,17 @@ export const bottomCard = css`
   margin-top: 18px;
   border-radius: 16px;
   font-size: 14px;
-  padding-bottom: 24px;
   > div:first-of-type {
-    height: 46px;
-    line-height: 46px;
+    padding: 16px 24px;
     font-size: 16px;
-    padding-left: 24px;
+    line-height: 1.4;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 600;
   }
   .card-details {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    padding: 0 24px 8px;
   }
 `
 

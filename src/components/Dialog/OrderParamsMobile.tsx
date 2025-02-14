@@ -55,7 +55,7 @@ export const OrderParamsMobile = ({
 
   return (
     <SwipeableDrawer anchor={'bottom'} open={isOpen} onOpen={() => console.log('open')} onClose={setIsOpen}>
-      <Box sx={{ padding: '16px 24px 32px' }}>
+      <Box sx={{ padding: '16px 24px 32px', background: 'rgba(0, 0, 0, 0.5)' }}>
         <Box
           sx={{
             width: '96px',
