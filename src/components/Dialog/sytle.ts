@@ -1,6 +1,7 @@
 import { css } from '@emotion/react'
 
 export const dialogContent = css`
+  color: #ffffff;  
   p {
     margin: 0;
   }

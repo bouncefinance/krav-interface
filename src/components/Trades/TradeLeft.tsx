@@ -105,7 +105,8 @@ export const TradeLeft = ({
           css={[
             chart,
             css`
-              background: ${theme.background.primary};
+              background: rgba(0, 0, 0, 0.5);
+              backdrop-filter: blur(2px);
               height: ${!isMobile ? '481px' : ''};
             `,
           ]}

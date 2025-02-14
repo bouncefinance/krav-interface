@@ -109,8 +109,10 @@ export const RemoveLiquidity = ({ isOpen, setIsOpen }: RemoveLiquidityProps) => 
           <div
             className="confirm-content-input3"
             css={css`
-              background: ${theme.background.second};
-              color: ${theme.text.primary};
+              // background: ${theme.background.second};
+              // color: ${theme.text.primary};
+              background: #292924;
+              color: rgba(230, 230, 206, 0.4);
             `}
           >
             <div
@@ -144,8 +146,10 @@ export const RemoveLiquidity = ({ isOpen, setIsOpen }: RemoveLiquidityProps) => 
                   disableUnderline: true,
                 }}
                 sx={{
-                  background: theme.background.second,
-                  color: theme.text.primary,
+                  // background: theme.background.second,
+                  // color: theme.text.primary,
+                  // background: '#292924',
+                  // color: '#ffffff!important',
                   height: '28px',
                   fontSize: '20px',
                   minHeight: '28px',

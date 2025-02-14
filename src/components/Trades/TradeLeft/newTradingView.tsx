@@ -18,11 +18,12 @@ export default function TradingViewWidget() {
         symbol: tradingViewSymbol,
         interval: 'D',
         timezone: 'Etc/UTC',
-        theme: 'light',
+        theme: 'dark',
         style: '1',
         locale: 'en',
         enable_publishing: false,
         container_id: 'tradingview_2daf6',
+        backgroundColor: 'rgba(0, 0, 0, 0.50)',
       })
     }
   }, [theme, tradingViewSymbol])

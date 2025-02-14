@@ -179,7 +179,9 @@ export const ProfitConfirmTrade = ({
         '.MuiDialog-paper': {
           width: '440px',
           borderRadius: '8px',
-          background: theme.background.primary,
+          background: 'rgba(0, 0, 0, 0.50)',
+          backdropFilter: 'blur(2px)',
+          color: '#ffffff',
           // backgroundColor: theme.palette.mode === 'dark' ? '#1B1E24' : '',
         },
       }}

@@ -13,9 +13,9 @@ import { ReactComponent as OpenIcon } from '../../assets/imgs/open_browser.svg'
 import { getBigNumberStr } from '../../utils'
 import { ReactComponent as DisconnectDarkIcon2 } from '../../assets/imgs/darkModel/disconnect_icon_2_dark.svg'
 import { ReactComponent as DisconnectIcon2 } from '../../assets/imgs/disconnect_icon_2.svg'
-import { ReactComponent as ThemeIconLight } from '../../assets/imgs/model_icon.svg'
-import { ReactComponent as ThemeIconDark } from '../../assets/imgs/darkModel/model_icon_dark.svg'
-import { KravModeSwitch } from '../KravUIKit/KravModeSwitch'
+// import { ReactComponent as ThemeIconLight } from '../../assets/imgs/model_icon.svg'
+// import { ReactComponent as ThemeIconDark } from '../../assets/imgs/darkModel/model_icon_dark.svg'
+// import { KravModeSwitch } from '../KravUIKit/KravModeSwitch'
 import BigNumber from 'bignumber.js'
 import { CONTRACT_CONFIG } from '../../constant/chain'
 
@@ -45,8 +45,11 @@ export const SettingMenuContent = ({
     <div
       css={css`
         width: 100%;
-        color: ${theme.text.primary};
-        background: ${theme.background.primary};
+        // color: ${theme.text.primary};
+        // background: ${theme.background.primary};
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(2px);
+        color: #ffffff;
       `}
     >
       <div
@@ -136,24 +139,24 @@ export const SettingMenuContent = ({
         {theme.palette.mode === 'dark' ? <DisconnectDarkIcon2 /> : <DisconnectIcon2 />}
         Disconnect
       </div>
-      <div
-        className="action"
-        css={css`
-          justify-content: space-between;
-        `}
-      >
-        <div css={align}>
-          {theme.palette.mode === 'light' ? <ThemeIconLight /> : <ThemeIconDark />}
-          <span
-            css={css`
-              margin-left: 12px;
-            `}
-          >
-            {theme.palette.mode === 'light' ? 'Light Mode' : 'Dark Mode'}
-          </span>
-        </div>
-        <KravModeSwitch checked={true} onClick={toggleTheme} />
-      </div>
+      {/*<div*/}
+      {/*  className="action"*/}
+      {/*  css={css`*/}
+      {/*    justify-content: space-between;*/}
+      {/*  `}*/}
+      {/*>*/}
+      {/*  <div css={align}>*/}
+      {/*    {theme.palette.mode === 'light' ? <ThemeIconLight /> : <ThemeIconDark />}*/}
+      {/*    <span*/}
+      {/*      css={css`*/}
+      {/*        margin-left: 12px;*/}
+      {/*      `}*/}
+      {/*    >*/}
+      {/*      {theme.palette.mode === 'light' ? 'Light Mode' : 'Dark Mode'}*/}
+      {/*    </span>*/}
+      {/*  </div>*/}
+      {/*  <KravModeSwitch checked={true} onClick={toggleTheme} />*/}
+      {/*</div>*/}
     </div>
   )
 }

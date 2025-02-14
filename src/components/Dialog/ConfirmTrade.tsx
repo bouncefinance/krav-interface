@@ -73,7 +73,10 @@ export const ConfirmTrade = ({
         '.MuiDialog-paper': {
           width: '440px',
           borderRadius: '8px',
-          background: theme.background.primary,
+          // background: theme.background.primary,
+          background: 'rgba(0, 0, 0, 0.50)',
+          backdropFilter: 'blur(2px)',
+          color: '#ffffff',
           // backgroundColor: theme.palette.mode === 'dark' ? '#1B1E24' : '',
         },
       }}
@@ -100,7 +103,9 @@ export const ConfirmTrade = ({
             <div
               className="confirm-content-input"
               css={css`
-                background: ${theme.background.second};
+                // background: ${theme.background.second};
+                background: #292924;
+                color: rgba(230, 230, 206, 0.4);
               `}
             >
               <div>
