@@ -47,8 +47,6 @@ export const SettingMenuContent = ({
         width: 100%;
         // color: ${theme.text.primary};
         // background: ${theme.background.primary};
-        background: rgba(0, 0, 0, 0.5);
-        backdrop-filter: blur(2px);
         color: #ffffff;
       `}
     >
@@ -75,14 +73,14 @@ export const SettingMenuContent = ({
           </div>
           <div>
             <Tooltip placement="top" sx={{ color: '#009B72' }} open={openTooltip} title="Copied to clipboard!">
-              {theme.palette.mode === 'dark' ? (
+              {theme.palette.mode === 'light' ? (
                 <CopyDarkIcon onClick={useCopyAddress} />
               ) : (
                 <CopyIcon onClick={useCopyAddress} />
               )}
             </Tooltip>
             <Tooltip placement="top" title="disconnect">
-              {theme.palette.mode === 'dark' ? (
+              {theme.palette.mode === 'light' ? (
                 <DisconnectIconDark1
                   onClick={async () => {
                     handleSettingClose()
@@ -100,7 +98,7 @@ export const SettingMenuContent = ({
             </Tooltip>
             <Tooltip placement="top" title="view on browser">
               <Link sx={{ marginLeft: '16px' }} href={chainId ? CHAINS[chainId].blockExplorerUrls?.[0] : ''}>
-                {theme.palette.mode === 'dark' ? (
+                {theme.palette.mode === 'light' ? (
                   <OpenDarkIcon onClick={handleSettingClose} />
                 ) : (
                   <OpenIcon onClick={handleSettingClose} />
@@ -136,7 +134,7 @@ export const SettingMenuContent = ({
           await disconnect()
         }}
       >
-        {theme.palette.mode === 'dark' ? <DisconnectDarkIcon2 /> : <DisconnectIcon2 />}
+        {theme.palette.mode === 'light' ? <DisconnectDarkIcon2 /> : <DisconnectIcon2 />}
         Disconnect
       </div>
       {/*<div*/}

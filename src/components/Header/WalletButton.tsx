@@ -127,6 +127,8 @@ export const WalletButton = ({
             sx={{
               '& .MuiPaper-root': {
                 minWidth: isMobile ? 200 : 440,
+                background: 'rgba(0, 0, 0, 0.5)',
+                backdropFilter: 'blur(2px)',
               },
               '& .MuiMenu-list': {
                 padding: 0,
